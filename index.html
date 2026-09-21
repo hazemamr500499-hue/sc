@@ -42,8 +42,6 @@ body{
   font-size:clamp(13px,2.5vw,15px);
   -webkit-font-smoothing:antialiased;
 }
-
-/* خلفية الساينس */
 .bg-shapes{position:fixed;inset:0;z-index:-1;overflow:hidden;pointer-events:none}
 .atom{position:absolute;border:2px solid rgba(6,182,212,.22);border-radius:50%}
 .atom::before{content:"";position:absolute;inset:25%;border:2px solid rgba(139,92,246,.20);border-radius:50%}
@@ -65,7 +63,6 @@ body{
 .molecule.m6{width:8px;height:8px;top:12%;left:52%;background:var(--blue);box-shadow:0 0 14px var(--blue);animation-delay:-5s}
 @keyframes spin{to{transform:rotate(360deg)}}
 @keyframes float{0%,100%{transform:translateY(0) scale(1)}50%{transform:translateY(-35px) scale(1.15)}}
-
 .formula{position:absolute;font-weight:900;opacity:.13;animation:drift 20s ease-in-out infinite;user-select:none;white-space:nowrap}
 .formula.f1{font-size:clamp(1.4rem,3.2vw,2.2rem);color:var(--cyan);top:12%;left:15%}
 .formula.f2{font-size:clamp(1rem,2.4vw,1.6rem);color:var(--purple);top:78%;left:8%;animation-delay:-3s}
@@ -76,7 +73,6 @@ body{
 .formula.f7{font-size:clamp(1rem,2.4vw,1.7rem);color:var(--red);top:5%;left:78%;animation-delay:-7s}
 .formula.f8{font-size:clamp(.8rem,1.9vw,1.3rem);color:var(--cyan);top:65%;left:45%;animation-delay:-10s}
 @keyframes drift{0%,100%{transform:translate(0,0) rotate(-3deg)}25%{transform:translate(20px,-25px) rotate(3deg)}50%{transform:translate(-15px,-15px) rotate(-2deg)}75%{transform:translate(15px,20px) rotate(2deg)}}
-
 .dna{position:absolute;opacity:.16;animation:float 12s ease-in-out infinite}
 .dna.d1{top:8%;left:3%;width:clamp(30px,5vw,50px);height:clamp(160px,28vw,280px)}
 .dna.d2{bottom:5%;right:5%;width:clamp(24px,4vw,40px);height:clamp(120px,22vw,220px);animation-delay:-6s}
@@ -89,177 +85,55 @@ body{
 @keyframes draw{to{stroke-dashoffset:0}}
 .bubble{position:absolute;bottom:0;border-radius:50%;animation:rise linear infinite}
 @keyframes rise{0%{transform:translateY(0) scale(.6);opacity:0}20%{opacity:.8}100%{transform:translateY(-100vh) scale(1.1);opacity:0}}
-
-/* الهيدر */
-header{
-  position:sticky;top:0;z-index:50;
-  background:linear-gradient(180deg,rgba(255,255,255,.95),rgba(255,255,255,.78));
-  backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
-  border-bottom:1px solid rgba(255,255,255,.6);
-  padding:clamp(10px,1.6vw,14px) clamp(12px,2.2vw,20px);
-  box-shadow:0 8px 24px rgba(30,64,175,.10), inset 0 -1px 0 rgba(100,150,220,.15);
-  padding-top:calc(clamp(10px,1.6vw,14px) + env(safe-area-inset-top));
-}
+header{position:sticky;top:0;z-index:50;background:linear-gradient(180deg,rgba(255,255,255,.95),rgba(255,255,255,.78));backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,.6);padding:clamp(10px,1.6vw,14px) clamp(12px,2.2vw,20px);box-shadow:0 8px 24px rgba(30,64,175,.10), inset 0 -1px 0 rgba(100,150,220,.15);padding-top:calc(clamp(10px,1.6vw,14px) + env(safe-area-inset-top))}
 .head-inner{max-width:1400px;margin:auto;display:flex;align-items:center;gap:clamp(10px,1.6vw,16px)}
-.logo{
-  width:clamp(46px,7vw,60px);height:clamp(46px,7vw,60px);
-  border-radius:16px;object-fit:cover;flex-shrink:0;
-  border:2.5px solid #fff;
-  box-shadow:0 6px 16px rgba(6,182,212,.35), 0 2px 6px rgba(0,0,0,.1), inset 0 -3px 6px rgba(30,64,175,.15);
-  background:#fff;
-}
+.logo{width:clamp(46px,7vw,60px);height:clamp(46px,7vw,60px);border-radius:16px;object-fit:cover;flex-shrink:0;border:2.5px solid #fff;box-shadow:0 6px 16px rgba(6,182,212,.35), 0 2px 6px rgba(0,0,0,.1), inset 0 -3px 6px rgba(30,64,175,.15);background:#fff}
 .brand{display:flex;flex-direction:column;line-height:1.2;min-width:0;flex:1}
-.brand h1{
-  font-size:clamp(.9rem,2.2vw,1.18rem);font-weight:900;
-  background:linear-gradient(90deg,#06b6d4,#8b5cf6,#ec4899);
-  -webkit-background-clip:text;background-clip:text;color:transparent;
-  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
-  filter:drop-shadow(0 2px 3px rgba(139,92,246,.25));
-}
+.brand h1{font-size:clamp(.9rem,2.2vw,1.18rem);font-weight:900;background:linear-gradient(90deg,#06b6d4,#8b5cf6,#ec4899);-webkit-background-clip:text;background-clip:text;color:transparent;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;filter:drop-shadow(0 2px 3px rgba(139,92,246,.25))}
 .brand span{font-size:clamp(.6rem,1.5vw,.72rem);color:var(--muted);font-weight:700;margin-top:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .header-user{margin-inline-start:auto;display:flex;align-items:center;gap:8px}
-.user-chip{
-  display:flex;align-items:center;gap:8px;
-  background:linear-gradient(180deg,#fff,#f1f5f9);
-  border:1px solid rgba(255,255,255,.8);
-  padding:6px 12px;border-radius:999px;
-  font-size:clamp(.65rem,1.5vw,.78rem);font-weight:800;
-  box-shadow:0 4px 10px rgba(30,64,175,.12), inset 0 -2px 4px rgba(30,64,175,.06), inset 0 2px 3px rgba(255,255,255,.9);
-  max-width:200px;
-}
-.user-chip .av{
-  width:24px;height:24px;border-radius:50%;
-  background:linear-gradient(180deg,#22d3ee,#8b5cf6);
-  color:#fff;display:grid;place-items:center;
-  font-size:.7rem;font-weight:900;flex-shrink:0;
-}
+.user-chip{display:flex;align-items:center;gap:8px;background:linear-gradient(180deg,#fff,#f1f5f9);border:1px solid rgba(255,255,255,.8);padding:6px 12px;border-radius:999px;font-size:clamp(.65rem,1.5vw,.78rem);font-weight:800;box-shadow:0 4px 10px rgba(30,64,175,.12), inset 0 -2px 4px rgba(30,64,175,.06), inset 0 2px 3px rgba(255,255,255,.9);max-width:200px}
+.user-chip .av{width:24px;height:24px;border-radius:50%;background:linear-gradient(180deg,#22d3ee,#8b5cf6);color:#fff;display:grid;place-items:center;font-size:.7rem;font-weight:900;flex-shrink:0}
 .user-chip .un{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.logout-btn{
-  width:clamp(34px,5.5vw,42px);height:clamp(34px,5.5vw,42px);
-  border-radius:12px;border:none;cursor:pointer;
-  background:linear-gradient(180deg,#f87171,#b91c1c);color:#fff;
-  font-size:1rem;
-  box-shadow:0 4px 0 #7f1d1d, 0 8px 16px rgba(239,68,68,.4), inset 0 2px 3px rgba(255,255,255,.35);
-  display:grid;place-items:center;
-  transition:.15s;flex-shrink:0;
-}
+.logout-btn{width:clamp(34px,5.5vw,42px);height:clamp(34px,5.5vw,42px);border-radius:12px;border:none;cursor:pointer;background:linear-gradient(180deg,#f87171,#b91c1c);color:#fff;font-size:1rem;box-shadow:0 4px 0 #7f1d1d, 0 8px 16px rgba(239,68,68,.4), inset 0 2px 3px rgba(255,255,255,.35);display:grid;place-items:center;transition:.15s;flex-shrink:0}
 .logout-btn:active{transform:translateY(3px);box-shadow:0 1px 0 #7f1d1d}
-
 main{max-width:1400px;margin:auto;padding:clamp(14px,2.4vw,22px) clamp(12px,2.2vw,20px)}
 .screen{display:none;animation:fade .35s ease}
 .screen.active{display:block}
 @keyframes fade{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
-
 .screen-head{display:flex;align-items:center;gap:clamp(8px,1.4vw,12px);margin-bottom:clamp(14px,2vw,18px)}
-.back-btn{
-  width:clamp(40px,6vw,48px);height:clamp(40px,6vw,48px);
-  border-radius:14px;border:1px solid rgba(255,255,255,.8);
-  background:linear-gradient(180deg,#fff,#eef2f7);
-  color:var(--text);font-size:clamp(1rem,2vw,1.2rem);cursor:pointer;
-  display:grid;place-items:center;transition:.15s;flex-shrink:0;
-  box-shadow:0 5px 0 rgba(30,64,175,.18), 0 8px 16px rgba(30,64,175,.15), inset 0 2px 3px rgba(255,255,255,.9);
-}
+.back-btn{width:clamp(40px,6vw,48px);height:clamp(40px,6vw,48px);border-radius:14px;border:1px solid rgba(255,255,255,.8);background:linear-gradient(180deg,#fff,#eef2f7);color:var(--text);font-size:clamp(1rem,2vw,1.2rem);cursor:pointer;display:grid;place-items:center;transition:.15s;flex-shrink:0;box-shadow:0 5px 0 rgba(30,64,175,.18), 0 8px 16px rgba(30,64,175,.15), inset 0 2px 3px rgba(255,255,255,.9)}
 .back-btn:active{transform:translateY(4px);box-shadow:0 1px 0 rgba(30,64,175,.18), 0 3px 8px rgba(30,64,175,.15)}
 .screen-title{font-size:clamp(1rem,2.4vw,1.3rem);font-weight:900;min-width:0}
 .screen-title small{display:block;font-size:clamp(.62rem,1.5vw,.74rem);color:var(--muted);font-weight:600;margin-top:3px}
-
-/* شاشة الدخول */
-.login-wrap{
-  min-height:calc(100vh - 80px);
-  display:flex;align-items:center;justify-content:center;
-  padding:20px 16px;
-}
-.login-card{
-  max-width:480px;width:100%;
-  padding:clamp(24px,4vw,38px) clamp(18px,3vw,28px);
-  background:linear-gradient(180deg,#fff,#f8fbff);
-  border:1px solid rgba(255,255,255,.9);
-  border-radius:28px;
-  box-shadow:0 20px 50px rgba(30,64,175,.22), 0 6px 14px rgba(30,64,175,.12), inset 0 2px 3px rgba(255,255,255,.9);
-  text-align:center;position:relative;overflow:hidden;
-}
-.login-card::before{
-  content:"";position:absolute;inset:0;
-  background:radial-gradient(400px 200px at 50% 0%,rgba(6,182,212,.15),transparent 70%);
-  pointer-events:none;
-}
-.login-logo{
-  width:clamp(80px,18vw,110px);height:clamp(80px,18vw,110px);
-  border-radius:24px;object-fit:cover;margin-bottom:16px;
-  border:3px solid #fff;
-  box-shadow:0 10px 24px rgba(6,182,212,.35), 0 4px 8px rgba(0,0,0,.12), inset 0 -4px 8px rgba(30,64,175,.15);
-  position:relative;
-  animation:bob 3s ease-in-out infinite;
-}
+.login-wrap{min-height:calc(100vh - 80px);display:flex;align-items:center;justify-content:center;padding:20px 16px}
+.login-card{max-width:480px;width:100%;padding:clamp(24px,4vw,38px) clamp(18px,3vw,28px);background:linear-gradient(180deg,#fff,#f8fbff);border:1px solid rgba(255,255,255,.9);border-radius:28px;box-shadow:0 20px 50px rgba(30,64,175,.22), 0 6px 14px rgba(30,64,175,.12), inset 0 2px 3px rgba(255,255,255,.9);text-align:center;position:relative;overflow:hidden}
+.login-card::before{content:"";position:absolute;inset:0;background:radial-gradient(400px 200px at 50% 0%,rgba(6,182,212,.15),transparent 70%);pointer-events:none}
+.login-logo{width:clamp(80px,18vw,110px);height:clamp(80px,18vw,110px);border-radius:24px;object-fit:cover;margin-bottom:16px;border:3px solid #fff;box-shadow:0 10px 24px rgba(6,182,212,.35), 0 4px 8px rgba(0,0,0,.12), inset 0 -4px 8px rgba(30,64,175,.15);position:relative;animation:bob 3s ease-in-out infinite}
 @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
-.login-card h1{
-  font-size:clamp(1.1rem,3vw,1.5rem);font-weight:900;margin-bottom:6px;
-  background:linear-gradient(90deg,#06b6d4,#8b5cf6,#ec4899);
-  -webkit-background-clip:text;background-clip:text;color:transparent;
-  filter:drop-shadow(0 3px 4px rgba(139,92,246,.25));position:relative;
-}
+.login-card h1{font-size:clamp(1.1rem,3vw,1.5rem);font-weight:900;margin-bottom:6px;background:linear-gradient(90deg,#06b6d4,#8b5cf6,#ec4899);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 3px 4px rgba(139,92,246,.25));position:relative}
 .login-card .sub{color:var(--muted);font-size:clamp(.72rem,1.8vw,.85rem);font-weight:700;margin-bottom:22px;position:relative}
 .field{margin-bottom:16px;position:relative;text-align:right}
 .field label{display:block;font-size:clamp(.72rem,1.6vw,.82rem);font-weight:800;color:var(--muted);margin-bottom:7px}
-.field input{
-  width:100%;padding:clamp(13px,2vw,16px) clamp(14px,2vw,16px);
-  border-radius:16px;background:linear-gradient(180deg,#f1f5f9,#fff);
-  border:1px solid rgba(100,150,220,.25);color:var(--text);
-  font-family:inherit;font-size:clamp(.88rem,2vw,1rem);font-weight:700;
-  outline:none;transition:.18s;text-align:center;
-  box-shadow:inset 0 2px 4px rgba(30,64,175,.10), inset 0 -1px 2px rgba(255,255,255,.9);
-}
-.field input:focus{border-color:var(--cyan);background:#fff;box-shadow:inset 0 2px 4px rgba(6,182,212,.08), 0 0 0 4px rgba(6,182,212,.18)}
+.field input,.field select{width:100%;padding:clamp(13px,2vw,16px) clamp(14px,2vw,16px);border-radius:16px;background:linear-gradient(180deg,#f1f5f9,#fff);border:1px solid rgba(100,150,220,.25);color:var(--text);font-family:inherit;font-size:clamp(.88rem,2vw,1rem);font-weight:700;outline:none;transition:.18s;text-align:center;box-shadow:inset 0 2px 4px rgba(30,64,175,.10), inset 0 -1px 2px rgba(255,255,255,.9)}
+.field input:focus,.field select:focus{border-color:var(--cyan);background:#fff;box-shadow:inset 0 2px 4px rgba(6,182,212,.08), 0 0 0 4px rgba(6,182,212,.18)}
 .field input::placeholder{color:#94a3b8;font-weight:600}
-
-.btn{
-  padding:clamp(13px,1.9vw,16px) clamp(16px,2.4vw,22px);
-  border-radius:16px;border:none;cursor:pointer;font-family:inherit;
-  font-weight:900;font-size:clamp(.85rem,2vw,1rem);
-  transition:.14s;display:inline-flex;align-items:center;justify-content:center;gap:8px;
-  min-height:52px;color:#fff;position:relative;letter-spacing:.2px;
-}
+.field select{text-align:right}
+.btn{padding:clamp(13px,1.9vw,16px) clamp(16px,2.4vw,22px);border-radius:16px;border:none;cursor:pointer;font-family:inherit;font-weight:900;font-size:clamp(.85rem,2vw,1rem);transition:.14s;display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:52px;color:#fff;position:relative;letter-spacing:.2px}
 .btn:active{transform:translateY(4px)}
 .btn-primary{background:linear-gradient(180deg,#22d3ee,#8b5cf6);box-shadow:0 6px 0 #4c1d95, 0 12px 24px rgba(139,92,246,.45), inset 0 2px 3px rgba(255,255,255,.35), inset 0 -3px 6px rgba(0,0,0,.15)}
 .btn-primary:active{box-shadow:0 2px 0 #4c1d95, 0 6px 14px rgba(139,92,246,.45)}
 .btn-block{width:100%}
-
-.login-error{
-  color:var(--red);font-size:clamp(.72rem,1.6vw,.82rem);font-weight:800;
-  margin-top:12px;min-height:18px;position:relative;
-}
+.login-error{color:var(--red);font-size:clamp(.72rem,1.6vw,.82rem);font-weight:800;margin-top:12px;min-height:18px;position:relative}
 .hint{font-size:clamp(.62rem,1.5vw,.72rem);color:var(--muted);font-weight:600;margin-top:14px;position:relative}
-
-/* الرئيسية */
-.hero{
-  text-align:center;margin-bottom:clamp(16px,2.8vw,24px);
-  padding:clamp(22px,3.4vw,34px) clamp(14px,2.4vw,20px);
-  background:linear-gradient(135deg,rgba(6,182,212,.14),rgba(139,92,246,.14));
-  border:1px solid rgba(255,255,255,.7);border-radius:28px;
-  position:relative;overflow:hidden;
-  box-shadow:0 18px 40px rgba(139,92,246,.22), 0 6px 14px rgba(6,182,212,.15), inset 0 2px 3px rgba(255,255,255,.9), inset 0 -3px 6px rgba(30,64,175,.08);
-}
+.hero{text-align:center;margin-bottom:clamp(16px,2.8vw,24px);padding:clamp(22px,3.4vw,34px) clamp(14px,2.4vw,20px);background:linear-gradient(135deg,rgba(6,182,212,.14),rgba(139,92,246,.14));border:1px solid rgba(255,255,255,.7);border-radius:28px;position:relative;overflow:hidden;box-shadow:0 18px 40px rgba(139,92,246,.22), 0 6px 14px rgba(6,182,212,.15), inset 0 2px 3px rgba(255,255,255,.9), inset 0 -3px 6px rgba(30,64,175,.08)}
 .hero::before{content:"";position:absolute;inset:0;background:radial-gradient(500px 240px at 50% 0%,rgba(6,182,212,.22),transparent 70%);pointer-events:none}
 .hero h2{font-size:clamp(1.15rem,3.2vw,1.7rem);font-weight:900;margin-bottom:8px;background:linear-gradient(90deg,#06b6d4,#8b5cf6,#ec4899);-webkit-background-clip:text;background-clip:text;color:transparent;position:relative;filter:drop-shadow(0 3px 4px rgba(139,92,246,.25))}
 .hero p{color:var(--muted);font-size:clamp(.72rem,1.8vw,.9rem);font-weight:700;position:relative}
 .hero .quick-stats{display:flex;justify-content:center;gap:14px;margin-top:16px;flex-wrap:wrap;position:relative}
-.qs{
-  padding:8px 14px;border-radius:999px;
-  background:rgba(255,255,255,.85);
-  font-size:clamp(.68rem,1.6vw,.8rem);font-weight:900;
-  box-shadow:0 3px 0 rgba(30,64,175,.12), 0 6px 12px rgba(30,64,175,.10), inset 0 2px 3px rgba(255,255,255,.9);
-  display:flex;align-items:center;gap:6px;
-}
-
+.qs{padding:8px 14px;border-radius:999px;background:rgba(255,255,255,.85);font-size:clamp(.68rem,1.6vw,.8rem);font-weight:900;box-shadow:0 3px 0 rgba(30,64,175,.12), 0 6px 12px rgba(30,64,175,.10), inset 0 2px 3px rgba(255,255,255,.9);display:flex;align-items:center;gap:6px}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(170px,100%),1fr));gap:clamp(10px,1.8vw,16px)}
-.tile{
-  position:relative;cursor:pointer;border-radius:var(--radius);
-  padding:clamp(18px,3vw,26px) clamp(10px,1.8vw,16px);
-  background:linear-gradient(180deg,#fff,#f5f8ff);
-  border:1px solid rgba(255,255,255,.9);
-  overflow:hidden;transition:.18s;text-align:center;
-  box-shadow:0 8px 0 rgba(30,64,175,.16), 0 14px 26px rgba(30,64,175,.18), inset 0 2px 3px rgba(255,255,255,.9);
-}
+.tile{position:relative;cursor:pointer;border-radius:var(--radius);padding:clamp(18px,3vw,26px) clamp(10px,1.8vw,16px);background:linear-gradient(180deg,#fff,#f5f8ff);border:1px solid rgba(255,255,255,.9);overflow:hidden;transition:.18s;text-align:center;box-shadow:0 8px 0 rgba(30,64,175,.16), 0 14px 26px rgba(30,64,175,.18), inset 0 2px 3px rgba(255,255,255,.9)}
 .tile::before{content:"";position:absolute;inset:0;opacity:0;transition:.3s;background:linear-gradient(135deg,rgba(6,182,212,.12),rgba(139,92,246,.12))}
 .tile:hover{transform:translateY(-4px);box-shadow:0 12px 0 rgba(30,64,175,.18), 0 22px 40px rgba(30,64,175,.24), inset 0 2px 3px rgba(255,255,255,.9)}
 .tile:hover::before{opacity:1}
@@ -269,120 +143,36 @@ main{max-width:1400px;margin:auto;padding:clamp(14px,2.4vw,22px) clamp(12px,2.2v
 .tile p{font-size:clamp(.62rem,1.5vw,.72rem);color:var(--muted);margin-top:5px;position:relative;font-weight:600}
 .tile.big{grid-column:span 2}
 @media(max-width:480px){.tile.big{grid-column:span 2}}
-
-/* كروت */
-.card{
-  background:linear-gradient(180deg,#fff,#f8fbff);
-  border:1px solid rgba(255,255,255,.9);
-  border-radius:var(--radius);
-  padding:clamp(14px,2.4vw,20px);margin-bottom:clamp(10px,1.8vw,16px);
-  box-shadow:0 10px 28px rgba(30,64,175,.14), 0 3px 8px rgba(30,64,175,.08), inset 0 2px 3px rgba(255,255,255,.9);
-}
+.card{background:linear-gradient(180deg,#fff,#f8fbff);border:1px solid rgba(255,255,255,.9);border-radius:var(--radius);padding:clamp(14px,2.4vw,20px);margin-bottom:clamp(10px,1.8vw,16px);box-shadow:0 10px 28px rgba(30,64,175,.14), 0 3px 8px rgba(30,64,175,.08), inset 0 2px 3px rgba(255,255,255,.9)}
 .card h3{font-size:clamp(.9rem,2vw,1.05rem);font-weight:900;margin-bottom:14px;display:flex;align-items:center;gap:8px}
-
-/* دائرة النسبة */
 .report-top{text-align:center;margin-bottom:20px}
-.month-select{
-  display:inline-block;width:auto;padding:10px 16px;
-  border-radius:14px;background:linear-gradient(180deg,#fff,#eef2f7);
-  border:1px solid rgba(100,150,220,.25);color:var(--text);
-  font-family:inherit;font-size:clamp(.82rem,1.8vw,.95rem);font-weight:800;
-  margin-bottom:20px;cursor:pointer;
-  box-shadow:0 4px 0 rgba(30,64,175,.15), 0 8px 16px rgba(30,64,175,.10), inset 0 2px 3px rgba(255,255,255,.9);
-  outline:none;
-}
+.month-select{display:inline-block;width:auto;padding:10px 16px;border-radius:14px;background:linear-gradient(180deg,#fff,#eef2f7);border:1px solid rgba(100,150,220,.25);color:var(--text);font-family:inherit;font-size:clamp(.82rem,1.8vw,.95rem);font-weight:800;margin-bottom:20px;cursor:pointer;box-shadow:0 4px 0 rgba(30,64,175,.15), 0 8px 16px rgba(30,64,175,.10), inset 0 2px 3px rgba(255,255,255,.9);outline:none}
 .circle-wrap{display:inline-block;position:relative;margin:6px 0 12px}
 .circle-svg{transform:rotate(-90deg);display:block;filter:drop-shadow(0 8px 20px rgba(139,92,246,.25))}
 .circle-bg{fill:none;stroke:rgba(100,150,220,.15);stroke-width:16}
 .circle-fg{fill:none;stroke-width:16;stroke-linecap:round;transition:stroke-dashoffset 1.2s ease}
-.circle-inner{
-  position:absolute;inset:0;display:flex;flex-direction:column;
-  align-items:center;justify-content:center;
-}
-.circle-inner .pct{
-  font-size:clamp(2rem,7vw,3rem);font-weight:900;
-  background:linear-gradient(90deg,#06b6d4,#8b5cf6,#ec4899);
-  -webkit-background-clip:text;background-clip:text;color:transparent;
-  filter:drop-shadow(0 3px 4px rgba(139,92,246,.3));
-  line-height:1;
-}
+.circle-inner{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.circle-inner .pct{font-size:clamp(2rem,7vw,3rem);font-weight:900;background:linear-gradient(90deg,#06b6d4,#8b5cf6,#ec4899);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 3px 4px rgba(139,92,246,.3));line-height:1}
 .circle-inner .lbl{font-size:clamp(.68rem,1.6vw,.8rem);color:var(--muted);font-weight:800;margin-top:4px}
-.rating{
-  display:inline-block;padding:8px 22px;border-radius:999px;
-  font-size:clamp(.82rem,2vw,1rem);font-weight:900;color:#fff;
-  box-shadow:0 4px 0 rgba(0,0,0,.15), 0 8px 18px rgba(0,0,0,.15), inset 0 2px 3px rgba(255,255,255,.35);
-}
-
-.report-grid{
-  display:grid;grid-template-columns:repeat(auto-fit,minmax(min(140px,100%),1fr));
-  gap:12px;margin-top:20px;
-}
-.report-item{
-  padding:16px;border-radius:18px;text-align:center;
-  background:linear-gradient(180deg,#fff,#f5f8ff);
-  border:1px solid rgba(255,255,255,.9);
-  box-shadow:0 6px 0 rgba(30,64,175,.10), 0 10px 20px rgba(30,64,175,.12), inset 0 2px 3px rgba(255,255,255,.9);
-}
+.rating{display:inline-block;padding:8px 22px;border-radius:999px;font-size:clamp(.82rem,2vw,1rem);font-weight:900;color:#fff;box-shadow:0 4px 0 rgba(0,0,0,.15), 0 8px 18px rgba(0,0,0,.15), inset 0 2px 3px rgba(255,255,255,.35)}
+.report-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(140px,100%),1fr));gap:12px;margin-top:20px}
+.report-item{padding:16px;border-radius:18px;text-align:center;background:linear-gradient(180deg,#fff,#f5f8ff);border:1px solid rgba(255,255,255,.9);box-shadow:0 6px 0 rgba(30,64,175,.10), 0 10px 20px rgba(30,64,175,.12), inset 0 2px 3px rgba(255,255,255,.9)}
 .report-item .ri-ico{font-size:1.6rem;display:block;margin-bottom:8px;filter:drop-shadow(0 3px 6px rgba(6,182,212,.4))}
 .report-item .ri-val{font-size:clamp(1.1rem,2.6vw,1.4rem);font-weight:900;background:linear-gradient(90deg,#06b6d4,#8b5cf6);-webkit-background-clip:text;background-clip:text;color:transparent}
 .report-item .ri-lbl{font-size:clamp(.62rem,1.5vw,.74rem);color:var(--muted);font-weight:800;margin-top:4px}
-.report-item .ri-bar{
-  height:8px;border-radius:999px;background:rgba(100,150,220,.15);
-  margin-top:10px;overflow:hidden;
-  box-shadow:inset 0 1px 3px rgba(30,64,175,.15);
-}
-.report-item .ri-bar span{
-  display:block;height:100%;border-radius:999px;
-  transition:width 1s ease;
-  box-shadow:inset 0 2px 3px rgba(255,255,255,.5), inset 0 -2px 3px rgba(0,0,0,.1);
-}
-
-/* الجداول */
-.table-wrap{
-  overflow-x:auto;border-radius:16px;background:#fff;
-  box-shadow:0 10px 28px rgba(30,64,175,.14), 0 3px 8px rgba(30,64,175,.08), inset 0 2px 3px rgba(255,255,255,.9);
-  -webkit-overflow-scrolling:touch;
-  border:1px solid rgba(255,255,255,.9);
-}
+.report-item .ri-bar{height:8px;border-radius:999px;background:rgba(100,150,220,.15);margin-top:10px;overflow:hidden;box-shadow:inset 0 1px 3px rgba(30,64,175,.15)}
+.report-item .ri-bar span{display:block;height:100%;border-radius:999px;transition:width 1s ease;box-shadow:inset 0 2px 3px rgba(255,255,255,.5), inset 0 -2px 3px rgba(0,0,0,.1)}
+.table-wrap{overflow-x:auto;border-radius:16px;background:#fff;box-shadow:0 10px 28px rgba(30,64,175,.14), 0 3px 8px rgba(30,64,175,.08), inset 0 2px 3px rgba(255,255,255,.9);-webkit-overflow-scrolling:touch;border:1px solid rgba(255,255,255,.9)}
 table{width:100%;border-collapse:collapse;font-size:clamp(.7rem,1.6vw,.82rem);min-width:560px}
 th,td{padding:clamp(9px,1.4vw,13px);text-align:right;border-bottom:1px solid rgba(100,150,220,.12);white-space:nowrap}
-th{
-  background:linear-gradient(180deg,rgba(34,211,238,.15),rgba(139,92,246,.15));
-  color:#0e7490;font-weight:900;font-size:clamp(.65rem,1.5vw,.78rem);position:sticky;top:0;
-  text-shadow:0 1px 2px rgba(255,255,255,.6);
-}
+th{background:linear-gradient(180deg,rgba(34,211,238,.15),rgba(139,92,246,.15));color:#0e7490;font-weight:900;font-size:clamp(.65rem,1.5vw,.78rem);position:sticky;top:0;text-shadow:0 1px 2px rgba(255,255,255,.6)}
 tr:hover td{background:rgba(6,182,212,.05)}
-
-/* إحصائيات */
 .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(110px,100%),1fr));gap:12px;margin-bottom:14px}
-.stat{
-  padding:clamp(12px,1.8vw,16px);border-radius:16px;
-  background:linear-gradient(180deg,#fff,#f5f8ff);
-  border:1px solid rgba(255,255,255,.9);text-align:center;
-  box-shadow:0 6px 0 rgba(30,64,175,.12), 0 10px 20px rgba(30,64,175,.12), inset 0 2px 3px rgba(255,255,255,.9);
-}
+.stat{padding:clamp(12px,1.8vw,16px);border-radius:16px;background:linear-gradient(180deg,#fff,#f5f8ff);border:1px solid rgba(255,255,255,.9);text-align:center;box-shadow:0 6px 0 rgba(30,64,175,.12), 0 10px 20px rgba(30,64,175,.12), inset 0 2px 3px rgba(255,255,255,.9)}
 .stat .num{font-size:clamp(1.15rem,2.8vw,1.55rem);font-weight:900;background:linear-gradient(90deg,#06b6d4,#8b5cf6);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 2px 3px rgba(139,92,246,.25))}
 .stat .lbl{font-size:clamp(.6rem,1.5vw,.72rem);color:var(--muted);font-weight:800;margin-top:4px}
-
-/* الحقول */
-.field input,.field select{
-  width:100%;padding:clamp(11px,1.8vw,14px) clamp(12px,1.8vw,15px);
-  border-radius:14px;background:linear-gradient(180deg,#f1f5f9,#fff);
-  border:1px solid rgba(100,150,220,.25);color:var(--text);
-  font-family:inherit;font-size:clamp(.8rem,1.8vw,.92rem);font-weight:600;
-  outline:none;transition:.18s;
-  box-shadow:inset 0 2px 4px rgba(30,64,175,.10), inset 0 -1px 2px rgba(255,255,255,.9);
-}
-.field input:focus,.field select:focus{border-color:var(--cyan);background:#fff;box-shadow:inset 0 2px 4px rgba(6,182,212,.08), 0 0 0 4px rgba(6,182,212,.18)}
-
-/* بطاقة آخر حصة */
 .last-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(200px,100%),1fr));gap:12px}
-.last-card{
-  padding:18px;border-radius:20px;text-align:center;
-  background:linear-gradient(180deg,#fff,#f5f8ff);
-  border:1px solid rgba(255,255,255,.9);
-  box-shadow:0 6px 0 rgba(30,64,175,.12), 0 12px 24px rgba(30,64,175,.14), inset 0 2px 3px rgba(255,255,255,.9);
-}
+.last-card{padding:18px;border-radius:20px;text-align:center;background:linear-gradient(180deg,#fff,#f5f8ff);border:1px solid rgba(255,255,255,.9);box-shadow:0 6px 0 rgba(30,64,175,.12), 0 12px 24px rgba(30,64,175,.14), inset 0 2px 3px rgba(255,255,255,.9)}
 .last-card .lc-ico{font-size:2rem;display:block;margin-bottom:10px;filter:drop-shadow(0 4px 8px rgba(6,182,212,.4))}
 .last-card .lc-lbl{font-size:clamp(.72rem,1.6vw,.82rem);color:var(--muted);font-weight:800;margin-bottom:6px}
 .last-card .lc-val{font-size:clamp(1rem,2.4vw,1.25rem);font-weight:900}
@@ -390,21 +180,9 @@ tr:hover td{background:rgba(6,182,212,.05)}
 .lc-val.red{color:var(--red)}
 .lc-val.blue{color:var(--blue)}
 .lc-note{font-size:clamp(.68rem,1.6vw,.78rem);color:var(--muted);font-weight:700;margin-top:6px;line-height:1.4}
-
-/* قائمة السلوكيات */
 .beh-list{display:flex;flex-direction:column;gap:10px}
-.beh-item{
-  padding:14px 16px;border-radius:16px;
-  background:linear-gradient(180deg,#fff,#f8fbff);
-  border:1px solid rgba(255,255,255,.9);
-  display:flex;align-items:center;gap:12px;
-  box-shadow:0 5px 0 rgba(30,64,175,.10), 0 9px 18px rgba(30,64,175,.10), inset 0 2px 3px rgba(255,255,255,.9);
-}
-.beh-item .bi-ico{
-  width:42px;height:42px;border-radius:12px;
-  display:grid;place-items:center;font-size:1.2rem;color:#fff;flex-shrink:0;
-  box-shadow:0 4px 0 rgba(0,0,0,.2), 0 6px 14px rgba(0,0,0,.15), inset 0 2px 3px rgba(255,255,255,.35);
-}
+.beh-item{padding:14px 16px;border-radius:16px;background:linear-gradient(180deg,#fff,#f8fbff);border:1px solid rgba(255,255,255,.9);display:flex;align-items:center;gap:12px;box-shadow:0 5px 0 rgba(30,64,175,.10), 0 9px 18px rgba(30,64,175,.10), inset 0 2px 3px rgba(255,255,255,.9)}
+.beh-item .bi-ico{width:42px;height:42px;border-radius:12px;display:grid;place-items:center;font-size:1.2rem;color:#fff;flex-shrink:0;box-shadow:0 4px 0 rgba(0,0,0,.2), 0 6px 14px rgba(0,0,0,.15), inset 0 2px 3px rgba(255,255,255,.35)}
 .beh-item .bi-ico.talk{background:linear-gradient(180deg,#f472b6,#db2777)}
 .beh-item .bi-ico.distract{background:linear-gradient(180deg,#fbbf24,#d97706)}
 .beh-item .bi-ico.angry{background:linear-gradient(180deg,#f87171,#b91c1c)}
@@ -412,88 +190,26 @@ tr:hover td{background:rgba(6,182,212,.05)}
 .beh-item .bi-info .bi-title{font-weight:800;font-size:clamp(.78rem,1.8vw,.88rem);margin-bottom:3px}
 .beh-item .bi-info .bi-meta{font-size:clamp(.62rem,1.5vw,.72rem);color:var(--muted);font-weight:600}
 .beh-item .bi-notes{font-size:clamp(.68rem,1.6vw,.78rem);color:#475569;font-weight:700;margin-top:6px;padding:6px 10px;border-radius:8px;background:rgba(100,150,220,.08)}
-
 .empty{text-align:center;padding:44px 20px;color:var(--muted);font-size:clamp(.78rem,1.8vw,.92rem);font-weight:700}
 .empty .ico{font-size:clamp(2.2rem,5vw,3.2rem);display:block;margin-bottom:12px;opacity:.55}
-
-.toast{
-  position:fixed;bottom:calc(100px + env(safe-area-inset-bottom));left:50%;
-  transform:translateX(-50%) translateY(120px);
-  background:linear-gradient(180deg,#22d3ee,#8b5cf6);color:#fff;
-  padding:14px 24px;border-radius:999px;font-weight:800;font-size:clamp(.75rem,1.8vw,.88rem);
-  box-shadow:0 8px 0 rgba(76,29,149,.4), 0 16px 30px rgba(139,92,246,.5), inset 0 2px 3px rgba(255,255,255,.35);
-  z-index:9999;opacity:0;transition:.4s;white-space:nowrap;max-width:90vw;overflow:hidden;text-overflow:ellipsis;
-}
+.toast{position:fixed;bottom:calc(100px + env(safe-area-inset-bottom));left:50%;transform:translateX(-50%) translateY(120px);background:linear-gradient(180deg,#22d3ee,#8b5cf6);color:#fff;padding:14px 24px;border-radius:999px;font-weight:800;font-size:clamp(.75rem,1.8vw,.88rem);box-shadow:0 8px 0 rgba(76,29,149,.4), 0 16px 30px rgba(139,92,246,.5), inset 0 2px 3px rgba(255,255,255,.35);z-index:9999;opacity:0;transition:.4s;white-space:nowrap;max-width:90vw;overflow:hidden;text-overflow:ellipsis}
 .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
 .toast.err{background:linear-gradient(180deg,#f87171,#b91c1c);box-shadow:0 8px 0 #7f1d1d, 0 16px 30px rgba(239,68,68,.5)}
-
-/* الفوتر */
-footer{
-  margin-top:36px;
-  padding:clamp(20px,3vw,28px) clamp(14px,2.2vw,22px);
-  padding-bottom:calc(clamp(20px,3vw,28px) + env(safe-area-inset-bottom));
-  background:linear-gradient(180deg,rgba(255,255,255,.7),rgba(255,255,255,.95));
-  border-top:1px solid rgba(255,255,255,.9);
-  box-shadow:0 -10px 30px rgba(30,64,175,.10), inset 0 2px 3px rgba(255,255,255,.9);
-  display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;
-  max-width:1400px;margin-left:auto;margin-right:auto;position:relative;
-}
-.footer-copy{
-  flex:1;min-width:200px;text-align:center;
-  font-size:clamp(.68rem,1.6vw,.78rem);font-weight:700;color:var(--muted);
-}
+footer{margin-top:36px;padding:clamp(20px,3vw,28px) clamp(14px,2.2vw,22px);padding-bottom:calc(clamp(20px,3vw,28px) + env(safe-area-inset-bottom));background:linear-gradient(180deg,rgba(255,255,255,.7),rgba(255,255,255,.95));border-top:1px solid rgba(255,255,255,.9);box-shadow:0 -10px 30px rgba(30,64,175,.10), inset 0 2px 3px rgba(255,255,255,.9);display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;max-width:1400px;margin-left:auto;margin-right:auto;position:relative}
+.footer-copy{flex:1;min-width:200px;text-align:center;font-size:clamp(.68rem,1.6vw,.78rem);font-weight:700;color:var(--muted)}
 .footer-copy .sym{color:var(--cyan);font-weight:900;font-size:1.2em;filter:drop-shadow(0 1px 2px rgba(6,182,212,.4))}
-.footer-copy .name{
-  background:linear-gradient(90deg,#06b6d4,#8b5cf6,#ec4899);
-  -webkit-background-clip:text;background-clip:text;color:transparent;
-  font-weight:900;filter:drop-shadow(0 2px 3px rgba(139,92,246,.25));
-}
-.install-fab{
-  display:none;
-  align-items:center;gap:10px;
-  padding:clamp(11px,1.6vw,14px) clamp(16px,2.2vw,22px);
-  border-radius:999px;border:none;cursor:pointer;
-  font-family:inherit;font-weight:900;font-size:clamp(.72rem,1.7vw,.85rem);
-  color:#fff;
-  background:linear-gradient(180deg,#22d3ee,#8b5cf6,#ec4899);
-  background-size:200% 200%;
-  animation:gradShift 6s ease infinite;
-  box-shadow:0 6px 0 rgba(76,29,149,.5), 0 14px 28px rgba(139,92,246,.45), inset 0 2px 3px rgba(255,255,255,.4);
-  transition:.15s;position:relative;z-index:10;
-}
+.footer-copy .name{background:linear-gradient(90deg,#06b6d4,#8b5cf6,#ec4899);-webkit-background-clip:text;background-clip:text;color:transparent;font-weight:900;filter:drop-shadow(0 2px 3px rgba(139,92,246,.25))}
+.install-fab{display:none;align-items:center;gap:10px;padding:clamp(11px,1.6vw,14px) clamp(16px,2.2vw,22px);border-radius:999px;border:none;cursor:pointer;font-family:inherit;font-weight:900;font-size:clamp(.72rem,1.7vw,.85rem);color:#fff;background:linear-gradient(180deg,#22d3ee,#8b5cf6,#ec4899);background-size:200% 200%;animation:gradShift 6s ease infinite;box-shadow:0 6px 0 rgba(76,29,149,.5), 0 14px 28px rgba(139,92,246,.45), inset 0 2px 3px rgba(255,255,255,.4);transition:.15s;position:relative;z-index:10}
 .install-fab.show{display:inline-flex}
 .install-fab:hover{transform:translateY(-2px)}
 .install-fab:active{transform:translateY(4px);box-shadow:0 2px 0 rgba(76,29,149,.5), 0 6px 14px rgba(139,92,246,.45)}
-.install-fab .fab-ic{
-  width:26px;height:26px;border-radius:50%;
-  background:rgba(255,255,255,.3);
-  display:grid;place-items:center;font-size:1rem;
-  box-shadow:inset 0 2px 3px rgba(255,255,255,.5), inset 0 -2px 3px rgba(0,0,0,.15);
-}
+.install-fab .fab-ic{width:26px;height:26px;border-radius:50%;background:rgba(255,255,255,.3);display:grid;place-items:center;font-size:1rem;box-shadow:inset 0 2px 3px rgba(255,255,255,.5), inset 0 -2px 3px rgba(0,0,0,.15)}
 @keyframes gradShift{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
-
 .chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
-.chip{
-  padding:clamp(7px,1vw,9px) clamp(12px,1.8vw,16px);
-  border-radius:999px;font-size:clamp(.68rem,1.6vw,.78rem);font-weight:800;
-  background:linear-gradient(180deg,#fff,#eef2f7);
-  border:1px solid rgba(100,150,220,.25);
-  color:var(--text);cursor:pointer;transition:.15s;
-  box-shadow:0 3px 0 rgba(30,64,175,.15), 0 5px 10px rgba(30,64,175,.10), inset 0 2px 3px rgba(255,255,255,.9);
-}
+.chip{padding:clamp(7px,1vw,9px) clamp(12px,1.8vw,16px);border-radius:999px;font-size:clamp(.68rem,1.6vw,.78rem);font-weight:800;background:linear-gradient(180deg,#fff,#eef2f7);border:1px solid rgba(100,150,220,.25);color:var(--text);cursor:pointer;transition:.15s;box-shadow:0 3px 0 rgba(30,64,175,.15), 0 5px 10px rgba(30,64,175,.10), inset 0 2px 3px rgba(255,255,255,.9)}
 .chip:active{transform:translateY(3px)}
 .chip.active{background:linear-gradient(180deg,#22d3ee,#8b5cf6);border-color:transparent;color:#fff;box-shadow:0 4px 0 rgba(76,29,149,.4), 0 8px 18px rgba(139,92,246,.4), inset 0 2px 3px rgba(255,255,255,.35)}
-
-@media(max-width:360px){
-  .grid{grid-template-columns:repeat(2,1fr)}
-  .tile .ico{font-size:1.6rem}
-  .tile h3{font-size:.74rem}
-  .tile p{font-size:.58rem}
-  .brand h1{font-size:.78rem}
-  footer{flex-direction:column;text-align:center}
-  .install-fab{width:100%;justify-content:center}
-  .user-chip{max-width:120px}
-}
+@media(max-width:360px){.grid{grid-template-columns:repeat(2,1fr)}.tile .ico{font-size:1.6rem}.tile h3{font-size:.74rem}.tile p{font-size:.58rem}.brand h1{font-size:.78rem}footer{flex-direction:column;text-align:center}.install-fab{width:100%;justify-content:center}.user-chip{max-width:120px}}
 @media(max-width:480px){.last-grid{grid-template-columns:1fr}}
 @media(max-height:500px) and (orientation:landscape){.bg-shapes{display:none}}
 @media(min-width:1600px){main{max-width:1500px}.head-inner,footer{max-width:1500px}}
@@ -503,45 +219,23 @@ footer{
 <body>
 
 <div class="bg-shapes" id="bgShapes">
-  <div class="atom a1"></div>
-  <div class="atom a2"></div>
-  <div class="atom a3"></div>
-  <div class="atom a4"></div>
-  <div class="molecule m1"></div>
-  <div class="molecule m2"></div>
-  <div class="molecule m3"></div>
-  <div class="molecule m4"></div>
-  <div class="molecule m5"></div>
-  <div class="molecule m6"></div>
-  <div class="formula f1">H₂O</div>
-  <div class="formula f2">CO₂</div>
-  <div class="formula f3">O₂</div>
-  <div class="formula f4">N₂</div>
-  <div class="formula f5">CH₄</div>
-  <div class="formula f6">NaCl</div>
-  <div class="formula f7">H₂SO₄</div>
-  <div class="formula f8">E=mc²</div>
+  <div class="atom a1"></div><div class="atom a2"></div><div class="atom a3"></div><div class="atom a4"></div>
+  <div class="molecule m1"></div><div class="molecule m2"></div><div class="molecule m3"></div>
+  <div class="molecule m4"></div><div class="molecule m5"></div><div class="molecule m6"></div>
+  <div class="formula f1">H₂O</div><div class="formula f2">CO₂</div><div class="formula f3">O₂</div><div class="formula f4">N₂</div>
+  <div class="formula f5">CH₄</div><div class="formula f6">NaCl</div><div class="formula f7">H₂SO₄</div><div class="formula f8">E=mc²</div>
   <div class="dna d1">
     <svg viewBox="0 0 60 280" xmlns="http://www.w3.org/2000/svg">
       <path d="M15,10 Q45,70 15,140 Q-15,210 15,270" stroke="#8b5cf6" stroke-width="3" fill="none"/>
       <path d="M45,10 Q15,70 45,140 Q75,210 45,270" stroke="#06b6d4" stroke-width="3" fill="none"/>
-      <line x1="15" y1="35" x2="45" y2="35" stroke="#ec4899" stroke-width="2"/>
-      <line x1="15" y1="70" x2="45" y2="70" stroke="#ec4899" stroke-width="2"/>
-      <line x1="15" y1="105" x2="45" y2="105" stroke="#ec4899" stroke-width="2"/>
-      <line x1="15" y1="175" x2="45" y2="175" stroke="#ec4899" stroke-width="2"/>
-      <line x1="15" y1="210" x2="45" y2="210" stroke="#ec4899" stroke-width="2"/>
-      <line x1="15" y1="245" x2="45" y2="245" stroke="#ec4899" stroke-width="2"/>
+      <line x1="15" y1="35" x2="45" y2="35" stroke="#ec4899" stroke-width="2"/><line x1="15" y1="70" x2="45" y2="70" stroke="#ec4899" stroke-width="2"/><line x1="15" y1="105" x2="45" y2="105" stroke="#ec4899" stroke-width="2"/><line x1="15" y1="175" x2="45" y2="175" stroke="#ec4899" stroke-width="2"/><line x1="15" y1="210" x2="45" y2="210" stroke="#ec4899" stroke-width="2"/><line x1="15" y1="245" x2="45" y2="245" stroke="#ec4899" stroke-width="2"/>
     </svg>
   </div>
   <div class="dna d2">
     <svg viewBox="0 0 60 280" xmlns="http://www.w3.org/2000/svg">
       <path d="M15,10 Q45,70 15,140 Q-15,210 15,270" stroke="#f59e0b" stroke-width="3" fill="none"/>
       <path d="M45,10 Q15,70 45,140 Q75,210 45,270" stroke="#10b981" stroke-width="3" fill="none"/>
-      <line x1="15" y1="50" x2="45" y2="50" stroke="#ec4899" stroke-width="2"/>
-      <line x1="15" y1="90" x2="45" y2="90" stroke="#ec4899" stroke-width="2"/>
-      <line x1="15" y1="130" x2="45" y2="130" stroke="#ec4899" stroke-width="2"/>
-      <line x1="15" y1="190" x2="45" y2="190" stroke="#ec4899" stroke-width="2"/>
-      <line x1="15" y1="230" x2="45" y2="230" stroke="#ec4899" stroke-width="2"/>
+      <line x1="15" y1="50" x2="45" y2="50" stroke="#ec4899" stroke-width="2"/><line x1="15" y1="90" x2="45" y2="90" stroke="#ec4899" stroke-width="2"/><line x1="15" y1="130" x2="45" y2="130" stroke="#ec4899" stroke-width="2"/><line x1="15" y1="190" x2="45" y2="190" stroke="#ec4899" stroke-width="2"/><line x1="15" y1="230" x2="45" y2="230" stroke="#ec4899" stroke-width="2"/>
     </svg>
   </div>
   <div class="axes">
@@ -575,14 +269,12 @@ footer{
 
 <main>
 
-<!-- ============ شاشة الدخول ============ -->
 <section class="screen active" id="screen-login">
   <div class="login-wrap">
     <div class="login-card">
       <img src="1.jpg" alt="logo" class="login-logo" onerror="this.style.display='none'">
       <h1>كورس مس مروة ساينس</h1>
       <p class="sub">أهلاً بيك 👋 سجّل دخولك عشان تشوف بياناتك</p>
-
       <div class="field">
         <label>اسمك (أول اسم أو أول اسمين)</label>
         <input type="text" id="loginName" placeholder="مثال: حازم عمرو" autocomplete="off">
@@ -591,7 +283,6 @@ footer{
         <label>الكود السري</label>
         <input type="text" id="loginCode" placeholder="ITA0000" autocomplete="off" style="text-transform:uppercase;letter-spacing:2px">
       </div>
-
       <button class="btn btn-primary btn-block" onclick="doLogin()" id="loginBtn">🚀 دخول</button>
       <div class="login-error" id="loginError"></div>
       <div class="hint">💡 لو نسيت الكود كلّم مس مروة</div>
@@ -599,7 +290,6 @@ footer{
   </div>
 </section>
 
-<!-- ============ الرئيسية ============ -->
 <section class="screen" id="screen-home">
   <div class="hero">
     <h2 id="heroGreet">أهلاً بيك 👋</h2>
@@ -611,35 +301,22 @@ footer{
     </div>
   </div>
   <div class="grid">
-    <div class="tile big" onclick="go('screen-report')">
-      <span class="ico">📊</span><h3>تقرير الشهر</h3><p>تقييمك الكامل بالتفصيل</p>
-    </div>
-    <div class="tile" onclick="go('screen-sessions')">
-      <span class="ico">📚</span><h3>الحصص كلها</h3><p>سجل الحضور والواجب</p>
-    </div>
-    <div class="tile" onclick="go('screen-last')">
-      <span class="ico">🕐</span><h3>آخر حصة</h3><p>تفاصيل آخر حصة</p>
-    </div>
-    <div class="tile" onclick="go('screen-exams')">
-      <span class="ico">🏆</span><h3>الامتحانات</h3><p>درجاتك ونسبك</p>
-    </div>
-    <div class="tile" onclick="go('screen-behavior')">
-      <span class="ico">🎭</span><h3>السلوك</h3><p>سلوكياتك المسجلة</p>
-    </div>
+    <div class="tile big" onclick="go('screen-report')"><span class="ico">📊</span><h3>تقرير الشهر</h3><p>تقييمك الكامل بالتفصيل</p></div>
+    <div class="tile" onclick="go('screen-sessions')"><span class="ico">📚</span><h3>الحصص كلها</h3><p>سجل الحضور والواجب</p></div>
+    <div class="tile" onclick="go('screen-last')"><span class="ico">🕐</span><h3>آخر حصة</h3><p>تفاصيل آخر حصة</p></div>
+    <div class="tile" onclick="go('screen-exams')"><span class="ico">🏆</span><h3>الامتحانات</h3><p>درجاتك ونسبك</p></div>
+    <div class="tile" onclick="go('screen-behavior')"><span class="ico">🎭</span><h3>السلوك</h3><p>سلوكياتك المسجلة</p></div>
   </div>
 </section>
 
-<!-- ============ تقرير الشهر ============ -->
 <section class="screen" id="screen-report">
   <div class="screen-head">
     <button class="back-btn" onclick="go('screen-home')">→</button>
     <div class="screen-title">تقرير الشهر 📊<small>تقييمك الشامل خلال الشهر</small></div>
   </div>
-
   <div class="card">
     <div class="report-top">
       <select class="month-select" id="reportMonth" onchange="renderReport()"></select>
-
       <div class="circle-wrap">
         <svg class="circle-svg" width="230" height="230" viewBox="0 0 230 230">
           <circle class="circle-bg" cx="115" cy="115" r="95"></circle>
@@ -650,63 +327,46 @@ footer{
           <div class="lbl">التقييم الإجمالي</div>
         </div>
       </div>
-
       <div><span class="rating" id="reportRating" style="background:linear-gradient(180deg,#a78bfa,#6d28d9)">—</span></div>
     </div>
-
     <div class="report-grid">
       <div class="report-item">
-        <span class="ri-ico">✅</span>
-        <div class="ri-val" id="rAtt">0%</div>
-        <div class="ri-lbl">الحضور</div>
+        <span class="ri-ico">✅</span><div class="ri-val" id="rAtt">0%</div><div class="ri-lbl">الحضور</div>
         <div class="ri-bar"><span id="rAttBar" style="width:0%;background:linear-gradient(90deg,#34d399,#047857)"></span></div>
       </div>
       <div class="report-item">
-        <span class="ri-ico">📗</span>
-        <div class="ri-val" id="rHw">0%</div>
-        <div class="ri-lbl">الواجب</div>
+        <span class="ri-ico">📗</span><div class="ri-val" id="rHw">0%</div><div class="ri-lbl">الواجب</div>
         <div class="ri-bar"><span id="rHwBar" style="width:0%;background:linear-gradient(90deg,#22d3ee,#0891b2)"></span></div>
       </div>
       <div class="report-item">
-        <span class="ri-ico">🏆</span>
-        <div class="ri-val" id="rEx">0%</div>
-        <div class="ri-lbl">الامتحانات</div>
+        <span class="ri-ico">🏆</span><div class="ri-val" id="rEx">0%</div><div class="ri-lbl">الامتحانات</div>
         <div class="ri-bar"><span id="rExBar" style="width:0%;background:linear-gradient(90deg,#a78bfa,#6d28d9)"></span></div>
       </div>
       <div class="report-item">
-        <span class="ri-ico">🎭</span>
-        <div class="ri-val" id="rBeh">0</div>
-        <div class="ri-lbl">السلوكيات</div>
+        <span class="ri-ico">🎭</span><div class="ri-val" id="rBeh">0</div><div class="ri-lbl">السلوكيات</div>
         <div class="ri-bar"><span id="rBehBar" style="width:0%;background:linear-gradient(90deg,#f87171,#b91c1c)"></span></div>
       </div>
     </div>
-
     <div style="margin-top:16px;padding:14px 16px;border-radius:16px;background:linear-gradient(135deg,rgba(6,182,212,.08),rgba(139,92,246,.08));border:1px dashed rgba(139,92,246,.35);font-size:clamp(.75rem,1.7vw,.85rem);font-weight:700;line-height:1.7">
       💡 <b>طريقة الحساب:</b> متوسط (الحضور + الواجب + الامتحانات) — وبعدين خصم 5% لكل سلوك (بحد أقصى 20%).
     </div>
   </div>
 </section>
 
-<!-- ============ كل الحصص ============ -->
 <section class="screen" id="screen-sessions">
   <div class="screen-head">
     <button class="back-btn" onclick="go('screen-home')">→</button>
     <div class="screen-title">الحصص كلها 📚<small>سجل كامل لكل حصصك</small></div>
   </div>
-
   <div class="stats" id="sessStats"></div>
-
   <div class="card">
-    <div class="field">
-      <select id="sessMonth" onchange="renderSessions()"></select>
-    </div>
+    <div class="field"><select id="sessMonth" onchange="renderSessions()"></select></div>
     <div class="chips">
       <div class="chip active" data-f="all" onclick="setSessFilter(this)">الكل</div>
       <div class="chip" data-f="present" onclick="setSessFilter(this)">حضرت</div>
       <div class="chip" data-f="absent" onclick="setSessFilter(this)">غبت</div>
     </div>
   </div>
-
   <div class="table-wrap">
     <table>
       <thead><tr><th>#</th><th>التاريخ</th><th>⏰ الوقت</th><th>الحضور</th><th>الواجب</th><th>الدفع</th></tr></thead>
@@ -715,7 +375,6 @@ footer{
   </div>
 </section>
 
-<!-- ============ آخر حصة ============ -->
 <section class="screen" id="screen-last">
   <div class="screen-head">
     <button class="back-btn" onclick="go('screen-home')">→</button>
@@ -724,7 +383,6 @@ footer{
   <div id="lastBox"></div>
 </section>
 
-<!-- ============ الامتحانات ============ -->
 <section class="screen" id="screen-exams">
   <div class="screen-head">
     <button class="back-btn" onclick="go('screen-home')">→</button>
@@ -739,7 +397,6 @@ footer{
   </div>
 </section>
 
-<!-- ============ السلوك ============ -->
 <section class="screen" id="screen-behavior">
   <div class="screen-head">
     <button class="back-btn" onclick="go('screen-home')">→</button>
@@ -753,8 +410,7 @@ footer{
 
 <footer>
   <button class="install-fab" id="installFab" onclick="installApp()">
-    <span class="fab-ic">⬇</span>
-    <span>نزّل التطبيق</span>
+    <span class="fab-ic">⬇</span><span>نزّل التطبيق</span>
   </button>
   <div class="footer-copy">
     <span class="sym">©</span> جميع الحقوق محفوظة ·
@@ -765,7 +421,9 @@ footer{
 <div class="toast" id="toast"></div>
 
 <script>
-/* Firebase */
+/* ============================================================
+   ⚠️ Firebase
+   ============================================================ */
 const firebaseConfig = {
   apiKey:            "AIzaSyAm33IVIUhKwGk6n8xat5_kIKDqjNE_zQA",
   authDomain:        "science-8e297.firebaseapp.com",
@@ -775,11 +433,36 @@ const firebaseConfig = {
   appId:             "1:63846758053:web:5c6cd102272bf50f4abf4c"
 };
 
-/* Manifest مدمج */
+/* ============================================================
+   🔐 STORAGE PREFIX — كل حاجة الطالب بتخزنها بتبدأ بـ student_
+   ده بيمنع أي تعارض مع لوحة التحكم
+   ============================================================ */
+const STORAGE_PREFIX = 'student_';
+const STORAGE_KEYS = {
+  auth: STORAGE_PREFIX + 'auth_code',    // كود الطالب
+  lastTab: STORAGE_PREFIX + 'last_tab'
+};
+
+function sGet(k){ try{ return localStorage.getItem(k); }catch(e){ return null; } }
+function sSet(k, v){ try{ localStorage.setItem(k, v); }catch(e){} }
+function sDel(k){ try{ localStorage.removeItem(k); }catch(e){} }
+
+/* تنظيف أي مفاتيح قديمة (من النسخة القديمة) عشان نبدأ نضيف */
+(function cleanupOldKeys(){
+  try{
+    // مسح أي مفاتيح قديمة بدون بادئة student_
+    localStorage.removeItem('mm_student_code');
+    // لو فيه مفتاح admin_ من لوحة التحكم — مش بنلمسه أبداً
+  }catch(e){}
+})();
+
+/* ============================================================
+   📱 Manifest مدمج
+   ============================================================ */
 (function(){
   const manifest = {
     name: "كورس مس مروة ساينس — الطالب",
-    short_name: "مس مروة ساينس",
+    short_name: "مس مروة ساينس — طالب",
     description: "بوابة الطالب — كورس مس مروة ساينس",
     start_url: ".", display: "standalone", orientation: "portrait",
     background_color: "#f0f9ff", theme_color: "#06b6d4",
@@ -796,16 +479,20 @@ const firebaseConfig = {
   document.head.appendChild(link);
 })();
 
-/* Service Worker مدمج */
+/* ============================================================
+   🔧 Service Worker مدمج — scope وcache مختلفين عن لوحة التحكم
+   ============================================================ */
 (function(){
   if(!('serviceWorker' in navigator)) return;
   const swCode = `
-    const CACHE='science-marwa-student-v1';
+    const CACHE='science-marwa-STUDENT-v1';
     const ASSETS=['./','./index.html','./1.jpg'];
     self.addEventListener('install',e=>{e.waitUntil(caches.open(CACHE).then(c=>c.addAll(ASSETS).catch(()=>{})));self.skipWaiting();});
-    self.addEventListener('activate',e=>{e.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k!==CACHE).map(k=>caches.delete(k)))));self.clients.claim();});
+    self.addEventListener('activate',e=>{e.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k!==CACHE && k.startsWith('science-marwa-STUDENT')).map(k=>caches.delete(k)))));self.clients.claim();});
     self.addEventListener('fetch',e=>{
       if(e.request.method!=='GET')return;
+      const url = new URL(e.request.url);
+      if(url.origin !== location.origin) return;
       e.respondWith(caches.match(e.request).then(cached=>{
         const fetchPromise=fetch(e.request).then(res=>{
           if(res&&res.status===200&&res.type==='basic'){const clone=res.clone();caches.open(CACHE).then(c=>c.put(e.request,clone));}
@@ -816,19 +503,24 @@ const firebaseConfig = {
     });
   `;
   const blob = new Blob([swCode], {type:'application/javascript'});
-  window.addEventListener('load', ()=>{ navigator.serviceWorker.register(URL.createObjectURL(blob)).catch(()=>{}); });
+  window.addEventListener('load', ()=>{
+    navigator.serviceWorker.register(URL.createObjectURL(blob)).catch(()=>{});
+  });
 })();
 
-/* State */
-let db=null, me=null, mySessions=[], myExams=[], myBehaviors=[];
-let sessFilter='all';
+/* ============================================================
+   State
+   ============================================================ */
+let db = null, me = null;
+let mySessions = [], myExams = [], myBehaviors = [];
+let sessFilter = 'all';
 
 /* Firebase init */
 function initFirebase(){
   try{
     firebase.initializeApp(firebaseConfig);
     db = firebase.firestore();
-    const saved = localStorage.getItem('mm_student_code');
+    const saved = sGet(STORAGE_KEYS.auth);
     if(saved) tryAutoLogin(saved);
   }catch(e){ console.error(e); }
 }
@@ -836,21 +528,37 @@ initFirebase();
 
 /* توحيد العربي */
 function normAr(s){
-  return String(s||'')
-    .trim()
+  return String(s||'').trim()
     .replace(/[\u064B-\u0652\u0670]/g,'')
     .replace(/[أإآا]/g,'ا')
     .replace(/ى/g,'ي').replace(/ة/g,'ه')
-    .replace(/\s+/g,' ')
-    .toLowerCase();
+    .replace(/\s+/g,' ').toLowerCase();
+}
+
+/* ============================================================
+   ✅ ROLE CHECK — نتأكد إن المستخدم "طالب" وليس أدمن
+   ============================================================ */
+function isAdminDoc(data){
+  if(!data) return false;
+  return (
+    data.role === 'admin' ||
+    data.role === 'teacher' ||
+    data.isAdmin === true ||
+    data.userType === 'admin' ||
+    data.userType === 'teacher' ||
+    data.type === 'admin'
+  );
 }
 
 /* دخول تلقائي */
 async function tryAutoLogin(code){
   try{
     const snap = await db.collection('students').where('code','==',code).limit(1).get();
-    if(snap.empty){ localStorage.removeItem('mm_student_code'); return; }
-    const s = {id:snap.docs[0].id, ...snap.docs[0].data()};
+    if(snap.empty){ sDel(STORAGE_KEYS.auth); return; }
+    const data = snap.docs[0].data();
+    // 🛡️ فحص الدور — لو أدمن، نمنع الدخول
+    if(isAdminDoc(data)){ sDel(STORAGE_KEYS.auth); return; }
+    const s = {id:snap.docs[0].id, ...data};
     await enterApp(s, true);
   }catch(e){ console.error(e); }
 }
@@ -868,12 +576,23 @@ async function doLogin(){
   try{
     const snap = await db.collection('students').where('code','==',codeIn).limit(1).get();
     if(snap.empty){ errEl.textContent='الكود السري غلط ❌'; btn.disabled=false; btn.textContent='🚀 دخول'; return; }
-    const s = {id:snap.docs[0].id, ...snap.docs[0].data()};
+
+    const data = snap.docs[0].data();
+
+    // 🛡️ فحص الدور — لو أدمن، نمنع الدخول
+    if(isAdminDoc(data)){
+      errEl.textContent = '⛔ ده حساب إداري — سجّل دخولك من لوحة التحكم';
+      btn.disabled=false; btn.textContent='🚀 دخول';
+      return;
+    }
+
+    const s = {id:snap.docs[0].id, ...data};
     const nNorm = normAr(nameIn);
     const sNorm = normAr(s.name);
     if(!sNorm.includes(nNorm)){ errEl.textContent='الاسم مش مطابق للكود ❌'; btn.disabled=false; btn.textContent='🚀 دخول'; return; }
+
     await enterApp(s, false);
-    localStorage.setItem('mm_student_code', codeIn);
+    sSet(STORAGE_KEYS.auth, codeIn);
   }catch(e){
     console.error(e);
     errEl.textContent='فيه مشكلة في الاتصال، حاول تاني';
@@ -896,7 +615,15 @@ async function enterApp(student, silent){
 
 /* خروج */
 function logout(){
-  localStorage.removeItem('mm_student_code');
+  /* مسح كل مفاتيح الطالب فقط — مش بنلمس أي مفتاح تاني */
+  Object.values(STORAGE_KEYS).forEach(k=>sDel(k));
+  // مسح احتياطي لأي مفاتيح طالب قديمة
+  try{
+    Object.keys(localStorage).forEach(k=>{
+      if(k.startsWith('student_')) localStorage.removeItem(k);
+    });
+  }catch(e){}
+
   me=null; mySessions=[]; myExams=[]; myBehaviors=[];
   document.getElementById('screen-login').classList.add('active');
   document.querySelectorAll('.screen').forEach(s=>{ if(s.id!=='screen-login') s.classList.remove('active'); });
@@ -904,6 +631,8 @@ function logout(){
   document.getElementById('loginName').value='';
   document.getElementById('loginCode').value='';
   document.getElementById('loginError').textContent='';
+  document.getElementById('loginBtn').disabled = false;
+  document.getElementById('loginBtn').textContent = '🚀 دخول';
 }
 
 /* تحميل بياناتي */
@@ -917,18 +646,12 @@ async function loadMyData(){
     mySessions = seSnap.docs.map(d=>({id:d.id,...d.data()}));
     myExams = eSnap.docs.map(d=>({id:d.id,...d.data()}));
     myBehaviors = bSnap.docs.map(d=>({id:d.id,...d.data()}));
-
     const pres = mySessions.filter(x=>x.attendance==='present').length;
     document.getElementById('qsSessions').textContent = mySessions.length;
     document.getElementById('qsPres').textContent = pres;
     document.getElementById('qsExams').textContent = myExams.length;
-
     buildMonthSelectors();
-    renderSessions();
-    renderLast();
-    renderExams();
-    renderBehavior();
-    renderReport();
+    renderSessions(); renderLast(); renderExams(); renderBehavior(); renderReport();
   }catch(e){ console.error(e); toast('مشكلة في تحميل البيانات', true); }
 }
 
@@ -940,16 +663,10 @@ function buildMonthSelectors(){
   const list = Array.from(months).sort().reverse();
   const now = new Date().toISOString().slice(0,7);
   if(!list.includes(now)) list.unshift(now);
-
-  const label = m=>{
-    const [y,mm]=m.split('-');
-    const names=['يناير','فبراير','مارس','أبريل','مايو','يونيو','يوليو','أغسطس','سبتمبر','أكتوبر','نوفمبر','ديسمبر'];
-    return names[parseInt(mm,10)-1] + ' ' + y;
-  };
-
+  const names=['يناير','فبراير','مارس','أبريل','مايو','يونيو','يوليو','أغسطس','سبتمبر','أكتوبر','نوفمبر','ديسمبر'];
+  const label = m=>{ const [y,mm]=m.split('-'); return names[parseInt(mm,10)-1] + ' ' + y; };
   const rSel = document.getElementById('reportMonth');
   rSel.innerHTML = list.map(m=>`<option value="${m}">${label(m)}</option>`).join('');
-
   const sSel = document.getElementById('sessMonth');
   sSel.innerHTML = `<option value="">كل الشهور</option>` + list.map(m=>`<option value="${m}">${label(m)}</option>`).join('');
 }
@@ -960,28 +677,22 @@ function renderReport(){
   const sess = mySessions.filter(x=>(x.date||'').startsWith(m));
   const exams = myExams.filter(x=>(x.date||'').startsWith(m));
   const beh = myBehaviors.filter(x=>(x.date||'').startsWith(m));
-
   const totSess = sess.length;
   const presCount = sess.filter(x=>x.attendance==='present').length;
   const attPct = totSess ? Math.round((presCount/totSess)*100) : 0;
-
   const hwDone = sess.filter(x=>x.homework==='done').length;
   const hwPct = totSess ? Math.round((hwDone/totSess)*100) : 0;
-
   const totalScore = exams.reduce((a,b)=>a+Number(b.score||0),0);
   const totalMax = exams.reduce((a,b)=>a+Number(b.total||0),0);
   const exPct = totalMax ? Math.round((totalScore/totalMax)*100) : 0;
-
-  let avg = 0; let counted = 0;
+  let avg = 0, counted = 0;
   if(totSess){ avg += attPct; avg += hwPct; counted += 2; }
   if(totalMax){ avg += exPct; counted++; }
   avg = counted ? Math.round(avg/counted) : 0;
-
   const behPenalty = Math.min(beh.length*5, 20);
   const final = Math.max(0, avg - behPenalty);
 
-  const R = 95;
-  const C = 2*Math.PI*R;
+  const R = 95, C = 2*Math.PI*R;
   const circle = document.getElementById('circleFg');
   circle.setAttribute('stroke-dasharray', C);
   circle.setAttribute('stroke-dashoffset', C * (1 - final/100));
@@ -990,16 +701,12 @@ function renderReport(){
   else if(final<60){color1='#fbbf24';color2='#b45309';}
   else if(final<75){color1='#22d3ee';color2='#0891b2';}
   else if(final<90){color1='#a78bfa';color2='#6d28d9';}
-  const grad = document.getElementById('grad'+(final>=90?'X':'')) ;
-  // set gradient inline via style
   circle.style.stroke = 'url(#circleGrad)';
   let defs = circle.parentElement.querySelector('defs');
   if(!defs){
     defs = document.createElementNS('http://www.w3.org/2000/svg','defs');
     const g = document.createElementNS('http://www.w3.org/2000/svg','linearGradient');
-    g.setAttribute('id','circleGrad');
-    g.setAttribute('x1','0%'); g.setAttribute('y1','0%');
-    g.setAttribute('x2','100%'); g.setAttribute('y2','100%');
+    g.setAttribute('id','circleGrad'); g.setAttribute('x1','0%'); g.setAttribute('y1','0%'); g.setAttribute('x2','100%'); g.setAttribute('y2','100%');
     const s1 = document.createElementNS('http://www.w3.org/2000/svg','stop');
     s1.setAttribute('offset','0%'); s1.setAttribute('stop-color',color1);
     const s2 = document.createElementNS('http://www.w3.org/2000/svg','stop');
@@ -1011,9 +718,7 @@ function renderReport(){
     stops[0].setAttribute('stop-color', color1);
     stops[1].setAttribute('stop-color', color2);
   }
-
   document.getElementById('reportPct').textContent = final + '%';
-
   let rating='', ratingBg='linear-gradient(180deg,#a78bfa,#6d28d9)';
   if(final>=90){ rating='🌟 ممتاز'; ratingBg='linear-gradient(180deg,#34d399,#047857)'; }
   else if(final>=75){ rating='👏 جيد جدًا'; ratingBg='linear-gradient(180deg,#a78bfa,#6d28d9)'; }
@@ -1023,7 +728,6 @@ function renderReport(){
   if(counted===0){ rating='— لا توجد بيانات'; ratingBg='linear-gradient(180deg,#94a3b8,#475569)'; }
   const rEl = document.getElementById('reportRating');
   rEl.textContent = rating; rEl.style.background = ratingBg;
-
   document.getElementById('rAtt').textContent = attPct + '%';
   document.getElementById('rHw').textContent = hwPct + '%';
   document.getElementById('rEx').textContent = exPct + '%';
@@ -1046,20 +750,13 @@ function renderSessions(){
   if(sessFilter==='present') list = list.filter(x=>x.attendance==='present');
   if(sessFilter==='absent') list = list.filter(x=>x.attendance==='absent');
   list.sort((a,b)=>(b.date||'').localeCompare(a.date||'') || (b.time||'').localeCompare(a.time||''));
-
   const body = document.getElementById('sessBody');
-  body.innerHTML = list.map((x,i)=>{
-    const rowPres = x.attendance==='present';
-    return `<tr>
-      <td>${i+1}</td>
-      <td>${x.date||'—'}</td>
-      <td>${x.time||'—'}</td>
-      <td>${rowPres?'✅ حضر':'❌ غاب'}</td>
+  body.innerHTML = list.map((x,i)=>`<tr>
+      <td>${i+1}</td><td>${x.date||'—'}</td><td>${x.time||'—'}</td>
+      <td>${x.attendance==='present'?'✅ حضر':'❌ غاب'}</td>
       <td>${x.homework==='done'?'📗 عمل':'📕 '+(x.homeworkReason||'ما عملش')}</td>
       <td>${x.sheet||0}</td>
-    </tr>`;
-  }).join('') || '<tr><td colspan="6" class="empty">مفيش حصص</td></tr>';
-
+    </tr>`).join('') || '<tr><td colspan="6" class="empty">مفيش حصص</td></tr>';
   const total = list.reduce((a,b)=>a+Number(b.sheet||0),0);
   const pres = list.filter(x=>x.attendance==='present').length;
   const hwD = list.filter(x=>x.homework==='done').length;
@@ -1074,10 +771,7 @@ function renderSessions(){
 function renderLast(){
   const sorted = mySessions.slice().sort((a,b)=>(b.date||'').localeCompare(a.date||'') || (b.time||'').localeCompare(a.time||''));
   const box = document.getElementById('lastBox');
-  if(!sorted.length){
-    box.innerHTML = '<div class="card"><div class="empty"><span class="ico">📭</span>مفيش حصص مسجلة لحد دلوقتي</div></div>';
-    return;
-  }
+  if(!sorted.length){ box.innerHTML = '<div class="card"><div class="empty"><span class="ico">📭</span>مفيش حصص مسجلة لحد دلوقتي</div></div>'; return; }
   const last = sorted[0];
   const total = mySessions.reduce((a,b)=>a+Number(b.sheet||0),0);
   box.innerHTML = `
@@ -1100,14 +794,13 @@ function renderLast(){
       </div>
     </div>
     <div class="card" style="margin-top:14px">
-      <div class="summary-box" style="border-radius:16px;padding:16px">
-        <div class="row" style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid rgba(100,150,220,.15)"><span style="color:var(--muted);font-weight:700">📅 التاريخ</span><span style="font-weight:800">${last.date||'—'} · ${last.time||''}</span></div>
-        <div class="row" style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid rgba(100,150,220,.15)"><span style="color:var(--muted);font-weight:700">🔑 كودك</span><span style="font-weight:800">${me.code}</span></div>
-        <div class="row" style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid rgba(100,150,220,.15)"><span style="color:var(--muted);font-weight:700">📚 عدد حصصك</span><span style="font-weight:800">${mySessions.length}</span></div>
-        <div class="row" style="display:flex;justify-content:space-between;padding:8px 0"><span style="color:var(--muted);font-weight:700">💵 إجمالي دفعك</span><span style="font-weight:800">${total}</span></div>
+      <div class="summary-box" style="border-radius:16px;padding:16px;background:linear-gradient(135deg,rgba(6,182,212,.10),rgba(139,92,246,.10));border:1px dashed rgba(139,92,246,.4)">
+        <div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid rgba(100,150,220,.15)"><span style="color:var(--muted);font-weight:700">📅 التاريخ</span><span style="font-weight:800">${last.date||'—'} · ${last.time||''}</span></div>
+        <div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid rgba(100,150,220,.15)"><span style="color:var(--muted);font-weight:700">🔑 كودك</span><span style="font-weight:800">${me.code}</span></div>
+        <div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid rgba(100,150,220,.15)"><span style="color:var(--muted);font-weight:700">📚 عدد حصصك</span><span style="font-weight:800">${mySessions.length}</span></div>
+        <div style="display:flex;justify-content:space-between;padding:8px 0"><span style="color:var(--muted);font-weight:700">💵 إجمالي دفعك</span><span style="font-weight:800">${total}</span></div>
       </div>
-    </div>
-  `;
+    </div>`;
 }
 
 /* الامتحانات */
@@ -1118,20 +811,9 @@ function renderExams(){
     const p = x.percentage||0;
     const color = p>=75?'#10b981':(p>=50?'#f59e0b':'#ef4444');
     let r='';
-    if(p>=90) r='🌟 ممتاز';
-    else if(p>=75) r='👏 جيد جدًا';
-    else if(p>=60) r='👍 كويس';
-    else if(p>=40) r='⚠️ مقبول';
-    else r='❗ ضعيف';
-    return `<tr>
-      <td>${x.date||'—'}</td>
-      <td>${x.time||'—'}</td>
-      <td>${x.score}/${x.total}</td>
-      <td style="color:${color};font-weight:900">${p}%</td>
-      <td>${r}</td>
-    </tr>`;
+    if(p>=90) r='🌟 ممتاز'; else if(p>=75) r='👏 جيد جدًا'; else if(p>=60) r='👍 كويس'; else if(p>=40) r='⚠️ مقبول'; else r='❗ ضعيف';
+    return `<tr><td>${x.date||'—'}</td><td>${x.time||'—'}</td><td>${x.score}/${x.total}</td><td style="color:${color};font-weight:900">${p}%</td><td>${r}</td></tr>`;
   }).join('') || '<tr><td colspan="5" class="empty">مفيش امتحانات</td></tr>';
-
   const avg = list.length ? Math.round(list.reduce((a,b)=>a+(b.percentage||0),0)/list.length) : 0;
   const best = list.length ? Math.max(...list.map(x=>x.percentage||0)) : 0;
   document.getElementById('examStats').innerHTML = `
@@ -1144,24 +826,15 @@ function renderExams(){
 function renderBehavior(){
   const list = myBehaviors.slice().sort((a,b)=>(b.date||'').localeCompare(a.date||''));
   const box = document.getElementById('behBox');
-  const statsEl = document.getElementById('behStats');
-
-  statsEl.innerHTML = `
+  document.getElementById('behStats').innerHTML = `
     <div class="stat"><div class="num">${list.length}</div><div class="lbl">إجمالي السلوكيات</div></div>
-    <div class="stat"><div class="num">${list.length?'-'+Math.min(list.length*5,20)+'%':'0%'}</div><div class="lbl">خصم التقييم</div></div>
-  `;
-
-  if(!list.length){
-    box.innerHTML = '<div class="card"><div class="empty"><span class="ico">🌟</span>مفيش سلوكيات مسجلة — شكلك مؤدب، كمل كده! 👏</div></div>';
-    return;
-  }
-
+    <div class="stat"><div class="num">${list.length?'-'+Math.min(list.length*5,20)+'%':'0%'}</div><div class="lbl">خصم التقييم</div></div>`;
+  if(!list.length){ box.innerHTML = '<div class="card"><div class="empty"><span class="ico">🌟</span>مفيش سلوكيات مسجلة — شكلك مؤدب، كمل كده! 👏</div></div>'; return; }
   const classify = (issue)=>{
-    if(['talking','rude','joke'].includes(issue)) return {cls:'talk', ico:'💬'};
-    if(['phone','sleep','focus','eat'].includes(issue)) return {cls:'distract', ico:'📱'};
+    if(['talking','rude','joke','cut','ignore'].includes(issue)) return {cls:'talk', ico:'💬'};
+    if(['phone','sleep','focus','eat','music','gaming','candy'].includes(issue)) return {cls:'distract', ico:'📱'};
     return {cls:'angry', ico:'🔥'};
   };
-
   box.innerHTML = `<div class="beh-list">${list.map(b=>{
     const c = classify(b.issue);
     return `<div class="beh-item">
@@ -1198,8 +871,7 @@ function toast(msg, err){
 /* PWA Install */
 let deferredPrompt;
 window.addEventListener('beforeinstallprompt', e=>{
-  e.preventDefault();
-  deferredPrompt = e;
+  e.preventDefault(); deferredPrompt = e;
   document.getElementById('installFab').classList.add('show');
 });
 window.addEventListener('appinstalled', ()=>{
@@ -1230,7 +902,7 @@ function spawnBubble(){
 }
 setInterval(spawnBubble, 1400);
 
-/* Enter key للدخول */
+/* Enter للدخول */
 document.getElementById('loginCode').addEventListener('keydown', e=>{ if(e.key==='Enter') doLogin(); });
 document.getElementById('loginName').addEventListener('keydown', e=>{ if(e.key==='Enter') document.getElementById('loginCode').focus(); });
 </script>
