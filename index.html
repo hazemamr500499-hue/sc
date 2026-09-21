@@ -1,0 +1,1352 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<title>كورس سنيور بهاء ايطاليانو</title>
+<meta name="theme-color" content="#009246" />
+<link rel="manifest" href="manifest.json" />
+<link rel="icon" href="1.jpg" />
+<link rel="apple-touch-icon" href="1.jpg" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-capable" content="yes" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        fontFamily: { sans: ['Cairo', 'system-ui', 'sans-serif'] },
+        colors: {
+          ita: {
+            green: '#009246', greenDark: '#007a3a', greenLight: '#e6f5ec',
+            red:   '#CE2B37', redDark:   '#a8222c', redLight:   '#fbeaec'
+          }
+        },
+        boxShadow: {
+          soft: '0 1px 2px rgba(16,24,40,.04), 0 8px 24px -8px rgba(16,24,40,.12)',
+          big:  '0 20px 50px -20px rgba(0,0,0,.28)'
+        }
+      }
+    }
+  }
+</script>
+
+<style>
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center;
+    gap: 0.5rem; border-radius: 1rem; padding: 0.625rem 1rem;
+    font-size: 0.875rem; font-weight: 800; transition: all 0.2s ease;
+    outline: none; user-select: none; cursor: pointer; border: none;
+    font-family: inherit; line-height: 1;
+  }
+  .btn:disabled { opacity: 0.5; cursor: not-allowed; }
+  .btn:focus { outline: none; }
+  .btn-green { background-color:#009246; color:#fff; box-shadow: 0 10px 15px -3px rgba(0,146,70,.25), 0 4px 6px -4px rgba(0,146,70,.25); }
+  .btn-green:hover { background-color:#007a3a; }
+  .btn-green:active { transform: scale(0.98); }
+  .btn-red { background-color:#CE2B37; color:#fff; box-shadow: 0 10px 15px -3px rgba(206,43,55,.25), 0 4px 6px -4px rgba(206,43,55,.25); }
+  .btn-red:hover { background-color:#a8222c; }
+  .btn-red:active { transform: scale(0.98); }
+  .btn-teal { background-color:#0d9488; color:#fff; box-shadow: 0 10px 15px -3px rgba(13,148,136,.25), 0 4px 6px -4px rgba(13,148,136,.25); }
+  .btn-teal:hover { background-color:#0f766e; }
+  .btn-purple { background-color:#7c3aed; color:#fff; box-shadow: 0 10px 15px -3px rgba(124,58,237,.25), 0 4px 6px -4px rgba(124,58,237,.25); }
+  .btn-purple:hover { background-color:#6d28d9; }
+  .btn-amber { background-color:#d97706; color:#fff; box-shadow: 0 10px 15px -3px rgba(217,119,6,.25), 0 4px 6px -4px rgba(217,119,6,.25); }
+  .btn-amber:hover { background-color:#b45309; }
+  .btn-white { background-color:#fff; color:#1e293b; border:2px solid #e2e8f0; }
+  .btn-white:hover { border-color:#cbd5e1; background-color:#f8fafc; }
+  .input { width:100%; border-radius:1rem; border:2px solid #e2e8f0; background-color:#fff; padding:0.75rem 1rem; font-size:0.875rem; color:#1e293b; outline:none; transition:all 0.2s ease; font-family:inherit; }
+  .input::placeholder { color:#94a3b8; }
+  .input:focus { border-color:#009246; box-shadow: 0 0 0 4px rgba(0,146,70,.1); }
+  .label { display:block; margin-bottom:0.375rem; font-size:13px; font-weight:800; color:#334155; }
+  .card { border-radius:1.5rem; background-color:#fff; border:1px solid #f1f5f9; box-shadow: 0 1px 2px rgba(16,24,40,.04), 0 8px 24px -8px rgba(16,24,40,.12); }
+  .th { padding:0.75rem 1rem; text-align:right; font-size:12px; font-weight:800; color:#64748b; text-transform:uppercase; white-space:nowrap; background-color:rgba(248,250,252,.8); }
+  .td { padding:0.75rem 1rem; font-size:0.875rem; color:#334155; white-space:nowrap; border-top:1px solid #f1f5f9; }
+</style>
+
+<style>
+  *{ -webkit-tap-highlight-color: transparent; }
+  html{ scroll-behavior:smooth; }
+  body{ font-family:'Cairo',system-ui,sans-serif; }
+  ::-webkit-scrollbar{ width:9px; height:9px; }
+  ::-webkit-scrollbar-thumb{ background:#cbd5e1; border-radius:9999px; }
+  .no-scrollbar::-webkit-scrollbar{ display:none; }
+  .no-scrollbar{ -ms-overflow-style:none; scrollbar-width:none; }
+  @keyframes fadeUp{ from{opacity:0;transform:translateY(12px)} to{opacity:1;transform:translateY(0)} }
+  @keyframes popIn{ from{opacity:0;transform:scale(.95)} to{opacity:1;transform:scale(1)} }
+  @keyframes slideDown{ from{opacity:0;transform:translateY(-8px)} to{opacity:1;transform:translateY(0)} }
+  @keyframes pulse{ 0%,100%{opacity:1} 50%{opacity:.35} }
+  .anim-fade{ animation:fadeUp .35s ease both; }
+  .anim-pop { animation:popIn .22s ease both; }
+  .anim-slide{ animation:slideDown .22s ease both; }
+  .pulse-dot{ animation:pulse 1.8s cubic-bezier(.4,0,.6,1) infinite; }
+  .flag-strip { background: linear-gradient(to left, #009246 0%, #009246 33.33%, #ffffff 33.33%, #ffffff 66.66%, #CE2B37 66.66%, #CE2B37 100%); }
+  .flag-bg {
+    background:
+      radial-gradient(circle at 20% 20%, rgba(0,146,70,.35), transparent 45%),
+      radial-gradient(circle at 80% 80%, rgba(206,43,55,.35), transparent 45%),
+      linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  }
+  .chip { display:inline-flex; align-items:center; gap:0.25rem; }
+
+  /* دائرة النسبة المئوية */
+  .progress-ring {
+    transform: rotate(-90deg);
+    transform-origin: 50% 50%;
+  }
+  .progress-ring circle {
+    transition: stroke-dashoffset 1s ease;
+  }
+</style>
+</head>
+
+<body class="bg-slate-50 text-slate-800 antialiased min-h-screen">
+
+<!-- ==================== شاشة الدخول ==================== -->
+<div id="loginScreen" class="min-h-screen flex items-center justify-center p-4 flag-bg relative overflow-hidden">
+
+  <div class="absolute top-0 right-0 w-1.5 h-full bg-ita-green opacity-80"></div>
+  <div class="absolute top-0 left-0 w-1.5 h-full bg-ita-red opacity-80"></div>
+  <div class="absolute -top-32 -right-32 w-96 h-96 bg-ita-green/20 rounded-full blur-3xl"></div>
+  <div class="absolute -bottom-32 -left-32 w-96 h-96 bg-ita-red/20 rounded-full blur-3xl"></div>
+
+  <div class="w-full max-w-md relative anim-pop z-10">
+    <div class="text-center mb-7">
+      <div class="inline-block relative">
+        <img src="1.jpg" alt="كورس سنيور بهاء ايطاليانو"
+          class="w-24 h-24 rounded-3xl object-cover mx-auto shadow-2xl ring-4 ring-white/20"
+          onerror="this.onerror=null;this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22120%22 height=%22120%22><rect width=%22120%22 height=%22120%22 rx=%2228%22 fill=%22%23009246%22/><text x=%2260%22 y=%2278%22 font-size=%2252%22 text-anchor=%22middle%22 fill=%22white%22 font-family=%22Arial%22 font-weight=%22bold%22>IT</text></svg>'">
+        <span class="absolute -bottom-2 -left-2 w-8 h-8 rounded-full flag-strip ring-4 ring-slate-900"></span>
+      </div>
+      <h1 class="mt-5 text-2xl sm:text-3xl font-black text-white tracking-tight">كورس سنيور بهاء ايطاليانو</h1>
+      <p class="mt-1.5 text-sm font-semibold text-slate-300/80">تسجيل دخول الطالب</p>
+    </div>
+
+    <form id="loginForm" class="bg-white/95 backdrop-blur-xl rounded-3xl p-6 sm:p-7 shadow-2xl border border-white/40">
+      <div class="mb-4">
+        <label class="label" for="loginName"><span class="flex items-center gap-2"><span>👤 اسم الطالب</span></span></label>
+        <input id="loginName" type="text" class="input" placeholder="اكتب اسمك (أول اسم أو أول اسمين)" autocomplete="username" required>
+        <p class="mt-1.5 text-[11px] text-slate-500 font-semibold">💡 مش لازم تكتب اسمك بالكامل — <b>أول اسم أو أول اسمين</b> كفاية.</p>
+      </div>
+
+      <div class="mb-5">
+        <label class="label" for="loginCode"><span class="flex items-center gap-2"><span>🔑 الكود السري</span></span></label>
+        <div class="relative">
+          <input id="loginCode" type="password" class="input pl-11 font-mono" placeholder="مثال: ITA4287" autocomplete="current-password" required>
+          <button type="button" id="togglePass" class="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600 transition text-lg">👁️</button>
+        </div>
+        <p class="mt-1.5 text-[11px] text-slate-500 font-semibold">💡 الكود مبعوث لك من المستر — اسأله لو مش معاك.</p>
+      </div>
+
+      <p id="loginError" class="hidden mb-3 text-sm text-ita-red font-bold bg-ita-redLight rounded-xl px-3 py-2"></p>
+
+      <button type="submit" id="loginBtn" class="btn btn-green w-full py-4 text-base">🚀 دخول</button>
+
+      <div class="mt-5 flex items-center gap-3">
+        <div class="flex-1 h-px bg-slate-200"></div>
+        <div class="w-8 h-8 rounded-full flag-strip shadow-sm"></div>
+        <div class="flex-1 h-px bg-slate-200"></div>
+      </div>
+
+      <p class="mt-4 text-[11px] text-slate-400 font-bold text-center leading-relaxed">لو عندك أي مشكلة في الدخول — كلّم المستر.</p>
+    </form>
+
+    <p class="mt-6 text-center text-[11px] text-white/60 font-bold">© <span id="yearLogin"></span> كورس سنيور بهاء ايطاليانو</p>
+  </div>
+</div>
+
+<!-- ==================== التطبيق ==================== -->
+<div id="app" class="hidden min-h-screen">
+
+  <header class="sticky top-0 z-40 bg-white shadow-sm">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="flex items-center justify-between h-16 gap-4">
+        <div class="flex items-center gap-3 min-w-0">
+          <img src="1.jpg" alt="لوجو"
+            class="w-11 h-11 rounded-2xl object-cover ring-2 ring-ita-green/20 shadow-sm"
+            onerror="this.onerror=null;this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2280%22 height=%2280%22><rect width=%2280%22 height=%2280%22 rx=%2218%22 fill=%22%23009246%22/><text x=%2240%22 y=%2252%22 font-size=%2234%22 text-anchor=%22middle%22 fill=%22white%22 font-family=%22Arial%22 font-weight=%22bold%22>IT</text></svg>'">
+          <div class="min-w-0">
+            <h1 class="text-sm sm:text-base font-black text-slate-900 leading-tight truncate">كورس سنيور بهاء ايطاليانو</h1>
+            <p class="text-[11px] text-slate-500 leading-tight truncate" id="welcomeSmall">أهلاً بك 👋</p>
+          </div>
+        </div>
+        <div class="flex items-center gap-2">
+          <div class="w-6 h-6 rounded-full flag-strip ring-1 ring-slate-200 shadow-sm"></div>
+          <button id="logoutBtn" class="btn btn-white !py-2 !px-3 text-[12px]">خروج</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="w-full border-t border-slate-100 bg-slate-50/80">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 h-10 flex items-center justify-between gap-3 text-[12px] font-bold">
+        <div class="flex items-center gap-2">
+          <span id="dotConn" class="w-2.5 h-2.5 rounded-full bg-slate-400 pulse-dot"></span>
+          <span id="txtConn" class="text-slate-600">جاري الاتصال...</span>
+        </div>
+        <div class="flex items-center gap-3">
+          <span class="text-slate-500">كودك: <span id="txtMyCode" class="text-ita-green font-black font-mono">—</span></span>
+          <span class="text-slate-300">|</span>
+          <span class="text-slate-500">حصصك: <span id="txtMyCount" class="text-ita-red font-black">0</span></span>
+        </div>
+      </div>
+      <div class="h-1 flag-strip"></div>
+    </div>
+  </header>
+
+  <main class="max-w-6xl mx-auto px-4 sm:px-6 py-6 pb-28">
+
+    <!-- ============ الصفحة الرئيسية ============ -->
+    <section id="viewHome" class="anim-fade">
+      <div class="card p-6 sm:p-7 mb-6 relative overflow-hidden">
+        <div class="absolute top-0 right-0 h-full w-1.5 bg-ita-green"></div>
+        <div class="absolute top-0 left-0 h-full w-1.5 bg-ita-red"></div>
+
+        <div class="flex flex-col sm:flex-row items-center gap-5 text-center sm:text-right">
+          <div id="avatarBig" class="w-20 h-20 rounded-3xl bg-ita-green text-white grid place-items-center font-black text-3xl shadow-lg shadow-ita-green/25 shrink-0">؟</div>
+          <div class="flex-1">
+            <p class="text-[12px] font-black text-slate-400 uppercase tracking-wide">أهلاً بك في كورسك</p>
+            <h2 id="welcomeName" class="text-2xl sm:text-3xl font-black text-slate-900 mt-1">—</h2>
+            <div id="studentMeta" class="mt-3 flex flex-wrap justify-center sm:justify-start gap-2"></div>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-6">
+          <div class="rounded-2xl bg-slate-50 border border-slate-100 p-3 text-center">
+            <p class="text-[10px] font-black text-slate-400 uppercase">إجمالي الحصص</p>
+            <p id="statTotal" class="text-xl font-black text-slate-900 mt-1">0</p>
+          </div>
+          <div class="rounded-2xl bg-ita-greenLight border border-ita-green/10 p-3 text-center">
+            <p class="text-[10px] font-black text-ita-green uppercase">حضرت</p>
+            <p id="statPresent" class="text-xl font-black text-ita-green mt-1">0</p>
+          </div>
+          <div class="rounded-2xl bg-ita-redLight border border-ita-red/10 p-3 text-center">
+            <p class="text-[10px] font-black text-ita-red uppercase">غبت</p>
+            <p id="statAbsent" class="text-xl font-black text-ita-red mt-1">0</p>
+          </div>
+          <div class="rounded-2xl bg-slate-50 border border-slate-100 p-3 text-center">
+            <p class="text-[10px] font-black text-slate-400 uppercase">إجمالي الدفع</p>
+            <p id="statPaid" class="text-xl font-black text-slate-900 mt-1">0</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5 أزرار -->
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+
+        <!-- تقرير الشهر (بارز) -->
+        <button id="btnMonthly" class="card p-6 text-right hover:shadow-big hover:-translate-y-1 transition-all duration-300 group relative overflow-hidden sm:col-span-2 lg:col-span-3">
+          <div class="absolute top-0 right-0 h-full w-2 bg-gradient-to-b from-amber-400 to-amber-600"></div>
+          <div class="flex items-center gap-4">
+            <div class="w-16 h-16 rounded-3xl bg-gradient-to-br from-amber-400 to-amber-600 text-white grid place-items-center text-3xl shadow-lg shadow-amber-500/25 shrink-0">
+              📊
+            </div>
+            <div class="flex-1 min-w-0">
+              <div class="flex items-center gap-2 mb-1">
+                <span class="bg-amber-100 text-amber-700 rounded-full px-2.5 py-0.5 text-[10px] font-black">جديد</span>
+              </div>
+              <h3 class="text-xl font-black text-slate-900">تقرير الشهر</h3>
+              <p class="mt-1 text-sm text-slate-500 font-semibold leading-relaxed">
+                شوف نسبتك المئوية في الشهر — حضور + واجب + امتحانات + سلوك.
+              </p>
+            </div>
+            <span class="text-amber-600 font-black text-2xl group-hover:-translate-x-1 transition shrink-0">←</span>
+          </div>
+        </button>
+
+        <button id="btnAllSessions" class="card p-7 text-right hover:shadow-big hover:-translate-y-1 transition-all duration-300 group relative overflow-hidden">
+          <div class="absolute top-0 right-0 h-full w-1.5 bg-ita-green"></div>
+          <div class="flex items-start justify-between gap-3">
+            <div class="w-16 h-16 rounded-3xl bg-ita-greenLight text-ita-green grid place-items-center text-3xl shadow-inner">📚</div>
+            <span class="bg-ita-greenLight text-ita-green rounded-full px-3 py-1 text-[10px] font-black">سجل كامل</span>
+          </div>
+          <h3 class="mt-5 text-xl font-black text-slate-900">الحصص كلها</h3>
+          <p class="mt-2 text-sm text-slate-500 font-semibold leading-relaxed">
+            كل حصصك — بالحضور، الواجب، والدفع.
+          </p>
+        </button>
+
+        <button id="btnLastSession" class="card p-7 text-right hover:shadow-big hover:-translate-y-1 transition-all duration-300 group relative overflow-hidden">
+          <div class="absolute top-0 right-0 h-full w-1.5 bg-ita-red"></div>
+          <div class="flex items-start justify-between gap-3">
+            <div class="w-16 h-16 rounded-3xl bg-ita-redLight text-ita-red grid place-items-center text-3xl shadow-inner">🕐</div>
+            <span class="bg-ita-redLight text-ita-red rounded-full px-3 py-1 text-[10px] font-black">آخر تحديث</span>
+          </div>
+          <h3 class="mt-5 text-xl font-black text-slate-900">آخر حصة</h3>
+          <p class="mt-2 text-sm text-slate-500 font-semibold leading-relaxed">
+            آخر حصة — الدفع، الحضور، الواجب.
+          </p>
+        </button>
+
+        <button id="btnExams" class="card p-7 text-right hover:shadow-big hover:-translate-y-1 transition-all duration-300 group relative overflow-hidden">
+          <div class="absolute top-0 right-0 h-full w-1.5 bg-teal-600"></div>
+          <div class="flex items-start justify-between gap-3">
+            <div class="w-16 h-16 rounded-3xl bg-teal-50 text-teal-700 grid place-items-center text-3xl shadow-inner">🏆</div>
+            <span class="bg-teal-50 text-teal-700 rounded-full px-3 py-1 text-[10px] font-black">درجاتك</span>
+          </div>
+          <h3 class="mt-5 text-xl font-black text-slate-900">الامتحانات</h3>
+          <p class="mt-2 text-sm text-slate-500 font-semibold leading-relaxed">
+            كل درجاتك + نسبتك في كل امتحان.
+          </p>
+        </button>
+
+        <button id="btnBehavior" class="card p-7 text-right hover:shadow-big hover:-translate-y-1 transition-all duration-300 group relative overflow-hidden">
+          <div class="absolute top-0 right-0 h-full w-1.5 bg-purple-600"></div>
+          <div class="flex items-start justify-between gap-3">
+            <div class="w-16 h-16 rounded-3xl bg-purple-50 text-purple-600 grid place-items-center text-3xl shadow-inner">🎭</div>
+            <span class="bg-purple-50 text-purple-600 rounded-full px-3 py-1 text-[10px] font-black">سلوكك</span>
+          </div>
+          <h3 class="mt-5 text-xl font-black text-slate-900">السلوك</h3>
+          <p class="mt-2 text-sm text-slate-500 font-semibold leading-relaxed">
+            كل السلوكيات اللي اتحسبت عليك.
+          </p>
+        </button>
+
+      </div>
+    </section>
+
+    <!-- ============ كل الحصص ============ -->
+    <section id="viewAll" class="hidden anim-fade">
+      <button class="btn btn-white mb-5" data-back>← رجوع</button>
+
+      <div class="card p-5 mb-4">
+        <div class="flex flex-col sm:flex-row sm:items-center gap-3">
+          <div class="flex-1">
+            <h2 class="font-black text-slate-900 text-lg">📚 كل الحصص</h2>
+            <p class="text-[12px] text-slate-500 font-semibold mt-0.5">سجلك الكامل — منظّم بالأحدث أولاً</p>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <select id="monthFilter" class="input !py-2.5 !w-auto font-bold">
+              <option value="">كل الشهور</option>
+            </select>
+            <select id="statusFilter" class="input !py-2.5 !w-auto font-bold">
+              <option value="">كل الحالات</option>
+              <option value="present">حضر فقط</option>
+              <option value="absent">غاب فقط</option>
+            </select>
+          </div>
+        </div>
+        <p id="allSummary" class="mt-3 text-[12px] font-bold text-slate-500"></p>
+      </div>
+
+      <div class="card overflow-hidden">
+        <div class="overflow-x-auto">
+          <table class="w-full min-w-[780px]">
+            <thead>
+              <tr>
+                <th class="th">#</th>
+                <th class="th">التاريخ</th>
+                <th class="th">⏰ الوقت</th>
+                <th class="th">الحضور</th>
+                <th class="th">الواجب</th>
+                <th class="th">الدفع</th>
+              </tr>
+            </thead>
+            <tbody id="allBody"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ آخر حصة ============ -->
+    <section id="viewLast" class="hidden anim-fade">
+      <button class="btn btn-white mb-5" data-back>← رجوع</button>
+      <div id="lastContent"></div>
+    </section>
+
+    <!-- ============ الامتحانات (جديد) ============ -->
+    <section id="viewExams" class="hidden anim-fade">
+      <button class="btn btn-white mb-5" data-back>← رجوع</button>
+
+      <div class="card p-5 mb-4">
+        <div class="flex items-center gap-3">
+          <div class="w-12 h-12 rounded-2xl bg-teal-50 text-teal-700 grid place-items-center text-2xl">🏆</div>
+          <div class="flex-1">
+            <h2 class="text-xl font-black text-slate-900">امتحاناتك</h2>
+            <p class="text-[12px] text-slate-500 font-semibold">كل درجاتك + نسبتك في كل امتحان</p>
+          </div>
+        </div>
+
+        <!-- إحصائيات -->
+        <div class="grid grid-cols-3 gap-3 mt-5">
+          <div class="rounded-2xl bg-slate-50 border border-slate-100 p-3 text-center">
+            <p class="text-[10px] font-black text-slate-400 uppercase">عدد الامتحانات</p>
+            <p id="examsCount" class="text-2xl font-black text-slate-900 mt-1">0</p>
+          </div>
+          <div class="rounded-2xl bg-teal-50 border border-teal-100 p-3 text-center">
+            <p class="text-[10px] font-black text-teal-700 uppercase">متوسط النسبة</p>
+            <p id="examsAvg" class="text-2xl font-black text-teal-700 mt-1">—</p>
+          </div>
+          <div class="rounded-2xl bg-ita-greenLight border border-ita-green/10 p-3 text-center">
+            <p class="text-[10px] font-black text-ita-green uppercase">أعلى درجة</p>
+            <p id="examsBest" class="text-2xl font-black text-ita-green mt-1">—</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="card overflow-hidden">
+        <div class="overflow-x-auto">
+          <table class="w-full min-w-[640px]">
+            <thead>
+              <tr>
+                <th class="th">التاريخ</th>
+                <th class="th">⏰ الوقت</th>
+                <th class="th">الدرجة</th>
+                <th class="th">النسبة</th>
+              </tr>
+            </thead>
+            <tbody id="examsBody"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ السلوك (جديد) ============ -->
+    <section id="viewBehavior" class="hidden anim-fade">
+      <button class="btn btn-white mb-5" data-back>← رجوع</button>
+
+      <div class="card p-5 mb-4">
+        <div class="flex items-center gap-3">
+          <div class="w-12 h-12 rounded-2xl bg-purple-50 text-purple-600 grid place-items-center text-2xl">🎭</div>
+          <div class="flex-1">
+            <h2 class="text-xl font-black text-slate-900">سلوكك</h2>
+            <p class="text-[12px] text-slate-500 font-semibold">كل السلوكيات المسجلة عليك</p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-3 mt-5">
+          <div class="rounded-2xl bg-purple-50 border border-purple-100 p-3 text-center">
+            <p class="text-[10px] font-black text-purple-700 uppercase">إجمالي السلوكيات</p>
+            <p id="behCount" class="text-2xl font-black text-purple-700 mt-1">0</p>
+          </div>
+          <div class="rounded-2xl bg-slate-50 border border-slate-100 p-3 text-center">
+            <p class="text-[10px] font-black text-slate-400 uppercase">آخر سلوك</p>
+            <p id="behLast" class="text-sm font-black text-slate-900 mt-1">—</p>
+          </div>
+        </div>
+      </div>
+
+      <div id="behList" class="space-y-3"></div>
+    </section>
+
+    <!-- ============ تقرير الشهر (جديد - المهم) ============ -->
+    <section id="viewMonthly" class="hidden anim-fade">
+      <button class="btn btn-white mb-5" data-back>← رجوع</button>
+
+      <!-- اختيار الشهر -->
+      <div class="card p-5 mb-4">
+        <div class="flex flex-col sm:flex-row sm:items-center gap-3">
+          <div class="flex-1">
+            <h2 class="font-black text-slate-900 text-lg">📊 تقرير الشهر</h2>
+            <p class="text-[12px] text-slate-500 font-semibold mt-0.5">اختر الشهر لعرض نسبتك المئوية</p>
+          </div>
+          <select id="reportMonth" class="input !py-2.5 !w-auto font-bold">
+            <option value="">اختر الشهر</option>
+          </select>
+        </div>
+      </div>
+
+      <div id="monthlyContent" class="hidden">
+
+        <!-- دائرة النسبة الإجمالية -->
+        <div class="card p-6 mb-4 relative overflow-hidden">
+          <div class="absolute top-0 right-0 h-full w-1.5 bg-gradient-to-b from-amber-400 to-amber-600"></div>
+
+          <div class="flex flex-col sm:flex-row items-center gap-6">
+
+            <!-- الدائرة -->
+            <div class="relative shrink-0">
+              <svg width="180" height="180" class="progress-ring">
+                <circle cx="90" cy="90" r="80" stroke="#e2e8f0" stroke-width="14" fill="none"/>
+                <circle id="ringProgress" cx="90" cy="90" r="80" stroke="url(#ringGradient)" stroke-width="14" fill="none" stroke-linecap="round" stroke-dasharray="502.4" stroke-dashoffset="502.4"/>
+                <defs>
+                  <linearGradient id="ringGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#009246"/>
+                    <stop offset="50%" stop-color="#fbbf24"/>
+                    <stop offset="100%" stop-color="#CE2B37"/>
+                  </linearGradient>
+                </defs>
+              </svg>
+              <div class="absolute inset-0 flex flex-col items-center justify-center">
+                <p id="overallPct" class="text-4xl font-black text-slate-900">0%</p>
+                <p class="text-[11px] font-black text-slate-400 uppercase mt-1">النسبة الإجمالية</p>
+              </div>
+            </div>
+
+            <!-- التقييم -->
+            <div class="flex-1 text-center sm:text-right">
+              <p class="text-[12px] font-black text-slate-400 uppercase">تقييمك في هذا الشهر</p>
+              <p id="overallRating" class="text-3xl font-black mt-2">—</p>
+              <p id="overallMsg" class="text-sm font-bold text-slate-500 mt-2 leading-relaxed">—</p>
+
+              <div class="mt-4 inline-flex items-center gap-2 rounded-2xl bg-slate-50 border border-slate-100 px-4 py-2">
+                <span class="text-2xl">📅</span>
+                <div class="text-right">
+                  <p class="text-[10px] font-black text-slate-400 uppercase">الشهر</p>
+                  <p id="monthLabel" class="text-sm font-black text-slate-900">—</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- تفاصيل النسب -->
+        <div class="grid sm:grid-cols-2 gap-4 mb-4">
+
+          <!-- الحضور -->
+          <div class="card p-5">
+            <div class="flex items-center justify-between mb-3">
+              <div class="flex items-center gap-3">
+                <div class="w-11 h-11 rounded-2xl bg-ita-greenLight text-ita-green grid place-items-center text-2xl">✅</div>
+                <div>
+                  <p class="text-[11px] font-black text-slate-400 uppercase">الحضور</p>
+                  <p id="attDetail" class="font-black text-slate-900 text-sm mt-0.5">—</p>
+                </div>
+              </div>
+              <p id="attPct" class="text-2xl font-black text-ita-green">0%</p>
+            </div>
+            <div class="h-2.5 rounded-full bg-slate-100 overflow-hidden">
+              <div id="attBar" class="h-full bg-gradient-to-l from-ita-green to-ita-greenDark rounded-full transition-all duration-700" style="width:0%"></div>
+            </div>
+          </div>
+
+          <!-- الواجب -->
+          <div class="card p-5">
+            <div class="flex items-center justify-between mb-3">
+              <div class="flex items-center gap-3">
+                <div class="w-11 h-11 rounded-2xl bg-blue-50 text-blue-600 grid place-items-center text-2xl">📗</div>
+                <div>
+                  <p class="text-[11px] font-black text-slate-400 uppercase">الواجب</p>
+                  <p id="hwDetail" class="font-black text-slate-900 text-sm mt-0.5">—</p>
+                </div>
+              </div>
+              <p id="hwPct" class="text-2xl font-black text-blue-600">0%</p>
+            </div>
+            <div class="h-2.5 rounded-full bg-slate-100 overflow-hidden">
+              <div id="hwBar" class="h-full bg-gradient-to-l from-blue-500 to-blue-700 rounded-full transition-all duration-700" style="width:0%"></div>
+            </div>
+          </div>
+
+          <!-- الامتحانات -->
+          <div class="card p-5">
+            <div class="flex items-center justify-between mb-3">
+              <div class="flex items-center gap-3">
+                <div class="w-11 h-11 rounded-2xl bg-teal-50 text-teal-700 grid place-items-center text-2xl">🏆</div>
+                <div>
+                  <p class="text-[11px] font-black text-slate-400 uppercase">الامتحانات</p>
+                  <p id="exDetail" class="font-black text-slate-900 text-sm mt-0.5">—</p>
+                </div>
+              </div>
+              <p id="exPct" class="text-2xl font-black text-teal-700">0%</p>
+            </div>
+            <div class="h-2.5 rounded-full bg-slate-100 overflow-hidden">
+              <div id="exBar" class="h-full bg-gradient-to-l from-teal-500 to-teal-700 rounded-full transition-all duration-700" style="width:0%"></div>
+            </div>
+          </div>
+
+          <!-- السلوك -->
+          <div class="card p-5">
+            <div class="flex items-center justify-between mb-3">
+              <div class="flex items-center gap-3">
+                <div class="w-11 h-11 rounded-2xl bg-purple-50 text-purple-600 grid place-items-center text-2xl">🎭</div>
+                <div>
+                  <p class="text-[11px] font-black text-slate-400 uppercase">السلوك</p>
+                  <p id="behMonthDetail" class="font-black text-slate-900 text-sm mt-0.5">—</p>
+                </div>
+              </div>
+              <p id="behMonthPct" class="text-2xl font-black text-purple-600">0%</p>
+            </div>
+            <div class="h-2.5 rounded-full bg-slate-100 overflow-hidden">
+              <div id="behBar" class="h-full bg-gradient-to-l from-purple-500 to-purple-700 rounded-full transition-all duration-700" style="width:0%"></div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- ملاحظة الحساب -->
+        <div class="card p-4">
+          <p class="text-[11px] font-bold text-slate-500 leading-relaxed text-center">
+            💡 <b>طريقة الحساب:</b> النسبة الإجمالية = متوسط (الحضور + الواجب + الامتحانات) — السلوك يخصم 5% لكل سلوك (بحد أقصى 20%).
+          </p>
+        </div>
+
+      </div>
+
+      <!-- لو مفيش حصص -->
+      <div id="monthlyEmpty" class="hidden">
+        <div class="card p-10 text-center">
+          <div class="w-16 h-16 mx-auto rounded-3xl bg-slate-100 text-slate-400 grid place-items-center text-3xl mb-4">📭</div>
+          <p class="font-black text-slate-900 text-lg">مفيش بيانات للشهر ده</p>
+          <p class="text-sm text-slate-500 font-semibold mt-1.5">اختار شهر تاني من فوق.</p>
+        </div>
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer class="fixed bottom-0 inset-x-0 z-40 border-t border-slate-200 bg-white/95 backdrop-blur-lg" style="padding-bottom:env(safe-area-inset-bottom)">
+    <div class="h-1 flag-strip"></div>
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-14 flex items-center justify-center gap-3 relative">
+      <p class="text-[11px] sm:text-xs text-slate-600 font-bold text-center leading-tight">
+        © <span id="year"></span> كورس سنيور بهاء ايطاليانو —
+        <span class="font-black text-slate-900">حازم عمرو محمد عبد الرحيم</span>
+      </p>
+      <button id="installBtn" class="btn btn-green !py-2 !px-3.5 text-[12px] absolute left-3 sm:left-6 top-1/2 -translate-y-1/2">
+        📲 التثبيت
+      </button>
+    </div>
+  </footer>
+
+</div>
+
+<div id="toastHost" class="fixed top-4 left-1/2 -translate-x-1/2 z-[100] flex flex-col items-center gap-2 pointer-events-none w-[calc(100%-2rem)] max-w-sm"></div>
+
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+import {
+  getFirestore, collection, query, where, getDocs
+} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+/* ==========================================================
+   1) إعدادات Firebase
+   ========================================================== */
+const FIREBASE_CONFIG = {
+  apiKey:            "AIzaSyCqsn0MNLElkc7T4I08-MGureu6xsauNA",
+  authDomain:        "italiano-app-24c0c.firebaseapp.com",
+  projectId:         "italiano-app-24c0c",
+  storageBucket:     "italiano-app-24c0c.appspot.com",
+  messagingSenderId: "383984346308",
+  appId:             "1:383984346308:web:b19b67fcc4d0e86dd31591"
+};
+
+let db = null;
+try {
+  db = getFirestore(initializeApp(FIREBASE_CONFIG));
+  console.log("✅ تم الاتصال بقاعدة بيانات فايربيز — موقع الطالب");
+} catch (e) { console.error('[Firebase init]', e); }
+
+/* ==========================================================
+   2) أدوات
+   ========================================================== */
+const $  = (s, r = document) => r.querySelector(s);
+const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+
+const state = {
+  student: null,
+  sessions: [],
+  exams: [],
+  behavior: [],
+  currentView: 'viewHome'
+};
+
+function toast(msg, type='success') {
+  const colors = { success:'bg-ita-green', error:'bg-ita-red', info:'bg-slate-800', warn:'bg-amber-500' };
+  const icons  = { success:'✅', error:'⛔', info:'ℹ️', warn:'⚠️' };
+  const el = document.createElement('div');
+  el.className = `${colors[type]} text-white rounded-2xl px-4 py-3 shadow-2xl text-sm font-bold flex items-center gap-2 anim-slide pointer-events-auto max-w-full`;
+  el.innerHTML = `<span>${icons[type]}</span><span class="flex-1">${escapeHtml(msg)}</span>`;
+  $('#toastHost').appendChild(el);
+  setTimeout(() => {
+    el.style.transition='opacity .3s, transform .3s';
+    el.style.opacity='0'; el.style.transform='translateY(-10px)';
+    setTimeout(()=>el.remove(), 320);
+  }, 3200);
+}
+
+const escapeHtml = s => String(s ?? '').replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[m]);
+const formatMoney = n => (Number(n)||0).toLocaleString('en-US') + ' ج.م';
+const todayISO = () => { const d=new Date(); const o=d.getTimezoneOffset(); return new Date(d.getTime()-o*60000).toISOString().slice(0,10); };
+const monthKey = iso => String(iso||'').slice(0,7);
+const currentMonth = () => todayISO().slice(0,7);
+
+function formatDate(d) {
+  if (!d) return '—';
+  try { return new Date(d+'T00:00:00').toLocaleDateString('ar-EG-u-nu-latn',{day:'2-digit',month:'2-digit',year:'numeric'}); }
+  catch { return d; }
+}
+function formatDayName(d) {
+  if (!d) return '—';
+  try { return new Date(d+'T00:00:00').toLocaleDateString('ar-EG', { weekday:'long' }); }
+  catch { return '—'; }
+}
+function formatMonthLabel(key) {
+  if (!key) return '';
+  try {
+    const [y,m] = key.split('-');
+    return new Date(Number(y), Number(m)-1, 1).toLocaleDateString('ar-EG-u-nu-latn',{ month:'long', year:'numeric' });
+  } catch { return key; }
+}
+const initials = n => {
+  const p = String(n||'').trim().split(/\s+/).filter(Boolean);
+  return p.length ? (p[0][0]||'') + (p[1]?p[1][0]:'') : '؟';
+};
+const fmtNum = n => {
+  const v = Number(n);
+  if (isNaN(v)) return '0';
+  return (v % 1 === 0) ? String(v) : v.toFixed(1);
+};
+
+function normalizeName(s) {
+  return String(s||'')
+    .replace(/[\u064B-\u0652]/g,'')
+    .replace(/[أإآا]/g,'ا')
+    .replace(/[ىي]/g,'ي')
+    .replace(/ة/g,'ه')
+    .replace(/\s+/g,' ')
+    .trim()
+    .toLowerCase();
+}
+
+function normalizeCode(c) {
+  return String(c ?? '').trim().toUpperCase();
+}
+
+/* ==========================================================
+   3) الدخول
+   ========================================================== */
+const AUTH_KEY = 'italiano_student_session';
+
+$('#togglePass').addEventListener('click', () => {
+  const inp = $('#loginCode');
+  inp.type = inp.type === 'password' ? 'text' : 'password';
+});
+
+$('#loginForm').addEventListener('submit', async e => {
+  e.preventDefault();
+  if (!db) return toast('لم يتم ضبط Firebase بعد','error');
+
+  const nameInput = $('#loginName').value.trim();
+  const codeInput = normalizeCode($('#loginCode').value);
+
+  if (!nameInput || !codeInput) return showLoginError('من فضلك اكتب اسمك وكودك.');
+
+  const btn = $('#loginBtn');
+  btn.disabled = true;
+  const orig = btn.textContent;
+  btn.textContent = '⏳ جارٍ التحقق...';
+  hideLoginError();
+
+  try {
+    const q = query(collection(db,'students'), where('code','==',codeInput));
+    const snap = await getDocs(q);
+
+    if (snap.empty) {
+      btn.disabled = false; btn.textContent = orig;
+      return showLoginError('الكود غير صحيح — تأكد من الكود اللي بعته لك المستر.');
+    }
+
+    const enteredNorm = normalizeName(nameInput);
+    let matched = null;
+
+    snap.forEach(d => {
+      if (matched) return;
+      const data = d.data();
+      const fullNorm = normalizeName(data.name);
+      if (fullNorm === enteredNorm || fullNorm.startsWith(enteredNorm + ' ') || fullNorm.startsWith(enteredNorm)) {
+        matched = { id: d.id, ...data };
+      }
+    });
+
+    if (!matched) {
+      btn.disabled = false; btn.textContent = orig;
+      return showLoginError('الاسم غير مطابق للكود — تأكد إنك كتبت اسمك صح.');
+    }
+
+    sessionStorage.setItem(AUTH_KEY, JSON.stringify({ id: matched.id, code: matched.code }));
+    state.student = matched;
+    await loadStudentData();
+    showApp();
+    toast(`أهلاً ${matched.name} 👋`, 'success');
+
+  } catch (err) {
+    console.error(err);
+    btn.disabled = false; btn.textContent = orig;
+    showLoginError('حصل خطأ أثناء الاتصال — حاول مرة أخرى.');
+  }
+});
+
+function showLoginError(msg) {
+  const el = $('#loginError');
+  el.textContent = msg;
+  el.classList.remove('hidden');
+}
+function hideLoginError() { $('#loginError').classList.add('hidden'); }
+
+/* ==========================================================
+   4) تحميل كل بيانات الطالب
+   ========================================================== */
+async function loadStudentData() {
+  if (!db || !state.student) return;
+  setConn(false);
+  try {
+    const sid = state.student.id;
+
+    const [sessionsSnap, examsSnap, behaviorSnap] = await Promise.all([
+      getDocs(query(collection(db,'sessions'),  where('studentId','==',sid))),
+      getDocs(query(collection(db,'exams'),     where('studentId','==',sid))),
+      getDocs(query(collection(db,'behavior'),  where('studentId','==',sid)))
+    ]);
+
+    state.sessions = sessionsSnap.docs.map(d => ({ id:d.id, ...d.data() }))
+      .sort((a,b)=> String(b.date||'').localeCompare(String(a.date||'')));
+
+    state.exams = examsSnap.docs.map(d => ({ id:d.id, ...d.data() }))
+      .sort((a,b)=> String(b.date||'').localeCompare(String(a.date||'')));
+
+    state.behavior = behaviorSnap.docs.map(d => ({ id:d.id, ...d.data() }))
+      .sort((a,b)=> String(b.date||'').localeCompare(String(a.date||'')));
+
+    setConn(true);
+  } catch (err) {
+    console.error(err);
+    setConn(false);
+    toast('تعذّر تحميل البيانات: '+err.message,'error');
+  }
+}
+
+function setConn(ok) {
+  const dot = $('#dotConn'), txt = $('#txtConn');
+  if (ok) {
+    dot.className = 'w-2.5 h-2.5 rounded-full bg-ita-green pulse-dot';
+    txt.textContent = 'متصل بقاعدة البيانات';
+    txt.className = 'text-ita-green font-black';
+  } else {
+    dot.className = 'w-2.5 h-2.5 rounded-full bg-ita-red pulse-dot';
+    txt.textContent = 'جاري الاتصال...';
+    txt.className = 'text-ita-red font-black';
+  }
+}
+
+/* ==========================================================
+   5) عرض التطبيق
+   ========================================================== */
+function showApp() {
+  $('#loginScreen').classList.add('hidden');
+  $('#app').classList.remove('hidden');
+
+  const s = state.student;
+  $('#welcomeSmall').textContent = `أهلاً ${s.name} 👋`;
+  $('#welcomeName').textContent = s.name;
+  $('#avatarBig').textContent = initials(s.name);
+  $('#txtMyCode').textContent = s.code || '—';
+  $('#txtMyCount').textContent = state.sessions.length;
+
+  const meta = [];
+  if (s.time)  meta.push({ icon:'🕐', text: s.time,  cls:'bg-slate-100 text-slate-700' });
+  if (s.stage) meta.push({ icon:'🎓', text: s.stage, cls:'bg-ita-greenLight text-ita-green' });
+  $('#studentMeta').innerHTML = meta.map(m =>
+    `<span class="chip ${m.cls} rounded-full px-3 py-1 text-[11px] font-black">
+       <span>${m.icon}</span><span>${escapeHtml(m.text)}</span>
+     </span>`
+  ).join('') || '';
+
+  renderStats();
+  buildMonthFilter();
+  buildReportMonthFilter();
+  renderAllSessions();
+  renderLastSession();
+  renderExamsView();
+  renderBehaviorView();
+
+  switchView('viewHome');
+}
+
+function renderStats() {
+  const total = state.sessions.length;
+  const present = state.sessions.filter(s => s.attendance === 'present').length;
+  const absent = total - present;
+  const paid = state.sessions.reduce((a,s)=>a+(Number(s.sheet ?? s.amount)||0),0);
+
+  $('#statTotal').textContent = total;
+  $('#statPresent').textContent = present;
+  $('#statAbsent').textContent = absent;
+  $('#statPaid').textContent = paid.toLocaleString('en-US');
+}
+
+/* ==========================================================
+   6) التنقل
+   ========================================================== */
+const VIEWS = ['viewHome','viewAll','viewLast','viewExams','viewBehavior','viewMonthly'];
+
+function switchView(id, pushHistory = true) {
+  const prev = state.currentView;
+  state.currentView = id;
+
+  VIEWS.forEach(v => {
+    const el = document.getElementById(v);
+    if (el) el.classList.toggle('hidden', v !== id);
+  });
+  window.scrollTo({ top:0, behavior:'smooth' });
+
+  if (pushHistory && id !== 'viewHome' && prev === 'viewHome') {
+    history.pushState({ view: id }, '');
+  }
+}
+
+window.addEventListener('popstate', () => {
+  if (state.currentView !== 'viewHome') switchView('viewHome', false);
+});
+
+$('#btnAllSessions').addEventListener('click', () => switchView('viewAll'));
+$('#btnLastSession').addEventListener('click', () => switchView('viewLast'));
+$('#btnExams').addEventListener('click',       () => switchView('viewExams'));
+$('#btnBehavior').addEventListener('click',    () => switchView('viewBehavior'));
+$('#btnMonthly').addEventListener('click',     () => {
+  // نظبط الشهر الافتراضي
+  const sel = $('#reportMonth');
+  if (!sel.value) {
+    const cm = currentMonth();
+    if ([...sel.options].some(o => o.value === cm)) sel.value = cm;
+    else if (sel.options.length > 1) sel.value = sel.options[1].value;
+    renderMonthlyReport();
+  }
+  switchView('viewMonthly');
+});
+
+document.addEventListener('click', e => {
+  if (e.target.closest('[data-back]')) {
+    if (state.currentView !== 'viewHome') history.back();
+    else switchView('viewHome', false);
+  }
+});
+
+/* ==========================================================
+   7) كل الحصص
+   ========================================================== */
+function buildMonthFilter() {
+  const sel = $('#monthFilter');
+  const months = [...new Set(state.sessions.map(s => monthKey(s.date)).filter(Boolean))]
+    .sort((a,b)=>b.localeCompare(a));
+  sel.innerHTML = '<option value="">كل الشهور</option>' +
+    months.map(m => `<option value="${m}">${formatMonthLabel(m)}</option>`).join('');
+}
+
+$('#monthFilter').addEventListener('change', renderAllSessions);
+$('#statusFilter').addEventListener('change', renderAllSessions);
+
+function filteredSessions() {
+  const m = $('#monthFilter').value;
+  const st = $('#statusFilter').value;
+  return state.sessions.filter(s => {
+    if (m && monthKey(s.date) !== m) return false;
+    if (st && s.attendance !== st) return false;
+    return true;
+  });
+}
+
+function renderAllSessions() {
+  const body = $('#allBody');
+  const list = filteredSessions();
+
+  const present = list.filter(s => s.attendance === 'present').length;
+  const money = list.reduce((a,s)=>a+(Number(s.sheet ?? s.amount)||0),0);
+  const hwDone = list.filter(s => s.homework === 'done').length;
+  $('#allSummary').textContent =
+    `${list.length} حصة · ✅ ${present} حضور · 📗 ${hwDone} واجب · إجمالي ${formatMoney(money)}`;
+
+  if (!list.length) {
+    body.innerHTML = `<tr><td colspan="6" class="td text-center text-slate-400 py-12">
+      ${state.sessions.length ? 'لا توجد حصص مطابقة للفلتر 🔍' : 'لا توجد حصص مسجلة عليك بعد 📚'}
+    </td></tr>`;
+    return;
+  }
+
+  body.innerHTML = list.map((s,i) => {
+    const present = s.attendance === 'present';
+    const amt = Number(s.sheet ?? s.amount) || 0;
+    const hw = s.homework;
+
+    return `
+      <tr class="hover:bg-slate-50/70 transition">
+        <td class="td text-slate-400 font-bold">${i+1}</td>
+        <td class="td font-bold">${formatDate(s.date)}</td>
+        <td class="td font-mono text-blue-600 text-xs">${escapeHtml(s.time||'—')}</td>
+        <td class="td">
+          ${present
+            ? `<span class="chip bg-ita-greenLight text-ita-green ring-1 ring-ita-green/20 rounded-full px-2.5 py-1 text-[11px] font-black">✅ حضر</span>`
+            : `<span class="chip bg-ita-redLight text-ita-red ring-1 ring-ita-red/20 rounded-full px-2.5 py-1 text-[11px] font-black">❌ غاب</span>`}
+        </td>
+        <td class="td">
+          ${hw === 'done'
+            ? `<span class="chip bg-blue-50 text-blue-700 ring-1 ring-blue-200 rounded-full px-2.5 py-1 text-[11px] font-black">📗 عمل</span>`
+            : hw === 'not_done'
+              ? `<span class="chip bg-rose-100 text-rose-700 ring-1 ring-rose-200 rounded-full px-2.5 py-1 text-[11px] font-black" title="${escapeHtml(s.homeworkReason||'')}">📕 ما عملش</span>`
+              : `<span class="text-slate-400 text-[11px]">—</span>`}
+        </td>
+        <td class="td font-black ${amt>0 ? 'text-ita-green' : 'text-slate-400'}">
+          ${amt>0 ? formatMoney(amt) : 'لم يدفع'}
+        </td>
+      </tr>`;
+  }).join('');
+}
+
+/* ==========================================================
+   8) آخر حصة
+   ========================================================== */
+function renderLastSession() {
+  const box = $('#lastContent');
+  const s = state.sessions[0];
+
+  if (!s) {
+    box.innerHTML = `
+      <div class="card p-10 text-center">
+        <div class="w-16 h-16 mx-auto rounded-3xl bg-slate-100 text-slate-400 grid place-items-center text-3xl mb-4">📭</div>
+        <p class="font-black text-slate-900 text-lg">لا توجد حصص بعد</p>
+        <p class="text-sm text-slate-500 font-semibold mt-1.5">لسه مفيش حصص مسجلة عليك — استنى المستر يسجل أول حصة.</p>
+      </div>`;
+    return;
+  }
+
+  const present = s.attendance === 'present';
+  const amt = Number(s.sheet ?? s.amount) || 0;
+  const hw = s.homework;
+
+  box.innerHTML = `
+    <div class="card relative overflow-hidden">
+      <div class="absolute top-0 right-0 h-full w-1.5 bg-ita-green"></div>
+      <div class="absolute top-0 left-0 h-full w-1.5 bg-ita-red"></div>
+
+      <div class="p-6 sm:p-8">
+        <div class="flex items-center gap-3 mb-5">
+          <div class="w-14 h-14 rounded-3xl bg-ita-redLight text-ita-red grid place-items-center text-2xl shadow-inner">🕐</div>
+          <div>
+            <p class="text-[11px] font-black text-slate-400 uppercase tracking-wide">آخر حصة مسجلة</p>
+            <h2 class="text-xl font-black text-slate-900">${formatDate(s.date)}</h2>
+            <p class="text-[12px] text-slate-500 font-bold mt-0.5">${formatDayName(s.date)}${s.time ? ` · ⏰ ${escapeHtml(s.time)}` : ''}</p>
+          </div>
+        </div>
+
+        <!-- 3 بطاقات: حضور + واجب + دفع -->
+        <div class="grid sm:grid-cols-3 gap-3">
+
+          <!-- الحضور -->
+          <div class="rounded-3xl border-2 ${present ? 'border-ita-green/30 bg-ita-greenLight/40' : 'border-ita-red/30 bg-ita-redLight/40'} p-4">
+            <div class="flex items-center gap-3">
+              <div class="w-11 h-11 rounded-2xl ${present ? 'bg-ita-green text-white' : 'bg-ita-red text-white'} grid place-items-center text-xl shadow-lg">
+                ${present ? '✅' : '❌'}
+              </div>
+              <div>
+                <p class="text-[10px] font-black ${present ? 'text-ita-green' : 'text-ita-red'} uppercase tracking-wide">الحضور</p>
+                <p class="text-base font-black text-slate-900">${present ? 'حضرت' : 'غبت'}</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- الواجب -->
+          <div class="rounded-3xl border-2 ${hw === 'done' ? 'border-blue-300/40 bg-blue-50/60' : hw === 'not_done' ? 'border-rose-300/40 bg-rose-50/60' : 'border-slate-200 bg-slate-50'} p-4">
+            <div class="flex items-center gap-3">
+              <div class="w-11 h-11 rounded-2xl ${hw === 'done' ? 'bg-blue-600 text-white' : hw === 'not_done' ? 'bg-rose-500 text-white' : 'bg-slate-400 text-white'} grid place-items-center text-xl shadow-lg">
+                ${hw === 'done' ? '📗' : hw === 'not_done' ? '📕' : '—'}
+              </div>
+              <div>
+                <p class="text-[10px] font-black ${hw === 'done' ? 'text-blue-700' : hw === 'not_done' ? 'text-rose-700' : 'text-slate-500'} uppercase tracking-wide">الواجب</p>
+                <p class="text-base font-black text-slate-900">
+                  ${hw === 'done' ? 'عمل' : hw === 'not_done' ? 'ما عملش' : '—'}
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- الدفع -->
+          <div class="rounded-3xl border-2 ${amt>0 ? 'border-ita-green/30 bg-ita-greenLight/40' : 'border-slate-200 bg-slate-50'} p-4">
+            <div class="flex items-center gap-3">
+              <div class="w-11 h-11 rounded-2xl ${amt>0 ? 'bg-ita-green text-white' : 'bg-slate-400 text-white'} grid place-items-center text-xl shadow-lg">
+                💰
+              </div>
+              <div>
+                <p class="text-[10px] font-black ${amt>0 ? 'text-ita-green' : 'text-slate-500'} uppercase tracking-wide">الدفع</p>
+                <p class="text-base font-black text-slate-900">${amt>0 ? formatMoney(amt) : 'لم تدفع'}</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        ${hw === 'not_done' && s.homeworkReason ? `
+          <div class="mt-4 rounded-2xl bg-rose-50 border-2 border-rose-200 p-4">
+            <p class="text-[11px] font-black text-rose-700 uppercase">📝 سبب عدم عمل الواجب</p>
+            <p class="font-black text-rose-900 mt-1.5">${escapeHtml(s.homeworkReason)}</p>
+          </div>
+        ` : ''}
+
+        <div class="mt-6 grid grid-cols-3 gap-3 text-center">
+          <div class="rounded-2xl bg-slate-50 border border-slate-100 p-3">
+            <p class="text-[10px] font-black text-slate-400 uppercase">كودك</p>
+            <p class="text-sm font-black text-slate-900 font-mono mt-1">${escapeHtml(state.student.code||'—')}</p>
+          </div>
+          <div class="rounded-2xl bg-slate-50 border border-slate-100 p-3">
+            <p class="text-[10px] font-black text-slate-400 uppercase">عدد حصصك</p>
+            <p class="text-sm font-black text-slate-900 mt-1">${state.sessions.length}</p>
+          </div>
+          <div class="rounded-2xl bg-slate-50 border border-slate-100 p-3">
+            <p class="text-[10px] font-black text-slate-400 uppercase">إجمالي دفعك</p>
+            <p class="text-sm font-black text-slate-900 mt-1">${formatMoney(state.sessions.reduce((a,x)=>a+(Number(x.sheet??x.amount)||0),0))}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+/* ==========================================================
+   9) الامتحانات
+   ========================================================== */
+function renderExamsView() {
+  const list = state.exams;
+  $('#examsCount').textContent = list.length;
+
+  const avg = list.length
+    ? Math.round(list.reduce((a,x)=>a+(Number(x.percentage)||0),0) / list.length * 10) / 10
+    : 0;
+  $('#examsAvg').textContent = list.length ? `${avg}%` : '—';
+
+  const best = list.length ? Math.max(...list.map(x => Number(x.percentage)||0)) : 0;
+  $('#examsBest').textContent = list.length ? `${best}%` : '—';
+
+  const body = $('#examsBody');
+  if (!list.length) {
+    body.innerHTML = `<tr><td colspan="4" class="td text-center text-slate-400 py-12">
+      لسه مفيش امتحانات مسجلة عليك 🏆
+    </td></tr>`;
+    return;
+  }
+
+  body.innerHTML = list.map(x => {
+    const pct = Number(x.percentage)||0;
+    const color = pct >= 80 ? 'bg-ita-greenLight text-ita-green' : pct >= 50 ? 'bg-amber-50 text-amber-700' : 'bg-ita-redLight text-ita-red';
+    return `
+      <tr class="hover:bg-slate-50/70 transition">
+        <td class="td font-bold">${formatDate(x.date)}</td>
+        <td class="td font-mono text-blue-600 text-xs">${escapeHtml(x.time||'—')}</td>
+        <td class="td font-black text-slate-900">${fmtNum(x.score)} / ${fmtNum(x.total)}</td>
+        <td class="td"><span class="chip ${color} ring-1 rounded-full px-2.5 py-1 text-[11px] font-black">${pct}%</span></td>
+      </tr>`;
+  }).join('');
+}
+
+/* ==========================================================
+   10) السلوك
+   ========================================================== */
+function renderBehaviorView() {
+  const list = state.behavior;
+  $('#behCount').textContent = list.length;
+  $('#behLast').textContent = list.length ? formatDate(list[0].date) : '—';
+
+  const box = $('#behList');
+  if (!list.length) {
+    box.innerHTML = `
+      <div class="card p-10 text-center">
+        <div class="w-16 h-16 mx-auto rounded-3xl bg-ita-greenLight text-ita-green grid place-items-center text-3xl mb-4">🎉</div>
+        <p class="font-black text-slate-900 text-lg">مفيش سلوكيات مسجلة</p>
+        <p class="text-sm text-slate-500 font-semibold mt-1.5">شكلك مؤدب — كمل كده! 👏</p>
+      </div>`;
+    return;
+  }
+
+  box.innerHTML = list.map(b => `
+    <div class="card p-4 flex items-center gap-4">
+      <div class="w-12 h-12 rounded-2xl bg-purple-100 text-purple-700 grid place-items-center text-2xl shrink-0">🎭</div>
+      <div class="min-w-0 flex-1">
+        <p class="font-black text-slate-900">${escapeHtml(b.issueLabel || b.issue || 'سلوك')}</p>
+        <p class="text-[11px] text-slate-500 font-bold mt-0.5">
+          ${formatDate(b.date)}${b.time ? ` · ⏰ ${escapeHtml(b.time)}` : ''}
+        </p>
+        ${b.notes ? `<p class="text-[11px] text-slate-600 font-semibold mt-1 bg-slate-50 rounded-lg px-2 py-1 inline-block">${escapeHtml(b.notes)}</p>` : ''}
+      </div>
+    </div>
+  `).join('');
+}
+
+/* ==========================================================
+   11) تقرير الشهر
+   ========================================================== */
+function buildReportMonthFilter() {
+  const sel = $('#reportMonth');
+  const allMonths = new Set();
+  state.sessions.forEach(s => { if (s.date) allMonths.add(monthKey(s.date)); });
+  state.exams.forEach(e => { if (e.date) allMonths.add(monthKey(e.date)); });
+  state.behavior.forEach(b => { if (b.date) allMonths.add(monthKey(b.date)); });
+
+  const months = [...allMonths].sort((a,b)=>b.localeCompare(a));
+  sel.innerHTML = '<option value="">اختر الشهر</option>' +
+    months.map(m => `<option value="${m}">${formatMonthLabel(m)}</option>`).join('');
+}
+
+$('#reportMonth').addEventListener('change', renderMonthlyReport);
+
+function renderMonthlyReport() {
+  const month = $('#reportMonth').value;
+  const content = $('#monthlyContent');
+  const empty = $('#monthlyEmpty');
+
+  if (!month) {
+    content.classList.add('hidden');
+    empty.classList.add('hidden');
+    return;
+  }
+
+  // فلترة
+  const sInMonth = state.sessions.filter(s => monthKey(s.date) === month);
+  const eInMonth = state.exams.filter(e => monthKey(e.date) === month);
+  const bInMonth = state.behavior.filter(b => monthKey(b.date) === month);
+
+  if (!sInMonth.length && !eInMonth.length && !bInMonth.length) {
+    content.classList.add('hidden');
+    empty.classList.remove('hidden');
+    return;
+  }
+
+  empty.classList.add('hidden');
+  content.classList.remove('hidden');
+  $('#monthLabel').textContent = formatMonthLabel(month);
+
+  // ===== الحضور =====
+  const attTotal = sInMonth.length;
+  const attPresent = sInMonth.filter(s => s.attendance === 'present').length;
+  const attPct = attTotal ? Math.round((attPresent / attTotal) * 100) : 0;
+
+  // ===== الواجب =====
+  const hwTotal = sInMonth.filter(s => s.homework === 'done' || s.homework === 'not_done').length;
+  const hwDone = sInMonth.filter(s => s.homework === 'done').length;
+  const hwPct = hwTotal ? Math.round((hwDone / hwTotal) * 100) : 0;
+
+  // ===== الامتحانات =====
+  let exPct = 0;
+  if (eInMonth.length) {
+    const sumScore = eInMonth.reduce((a,x)=>a+(Number(x.score)||0), 0);
+    const sumTotal = eInMonth.reduce((a,x)=>a+(Number(x.total)||0), 0);
+    exPct = sumTotal ? Math.round((sumScore / sumTotal) * 100) : 0;
+  }
+
+  // ===== السلوك (خصم) =====
+  const behCount = bInMonth.length;
+  const behPenalty = Math.min(behCount * 5, 20);
+  const behScore = 100 - behPenalty; // كل سلوك = -5%
+
+  // ===== النسبة الإجمالية =====
+  const components = [];
+  if (attTotal) components.push(attPct);
+  if (hwTotal)  components.push(hwPct);
+  if (eInMonth.length) components.push(exPct);
+
+  let overall = components.length
+    ? Math.round(components.reduce((a,b)=>a+b, 0) / components.length)
+    : 0;
+
+  // خصم السلوك
+  overall = Math.max(0, overall - behPenalty);
+
+  // ===== عرض =====
+  $('#attPct').textContent = attPct + '%';
+  $('#attDetail').textContent = attTotal ? `${attPresent} من ${attTotal} حصة` : 'لا يوجد';
+  $('#attBar').style.width = attPct + '%';
+
+  $('#hwPct').textContent = hwPct + '%';
+  $('#hwDetail').textContent = hwTotal ? `${hwDone} من ${hwTotal} واجب` : 'لا يوجد';
+  $('#hwBar').style.width = hwPct + '%';
+
+  $('#exPct').textContent = exPct + '%';
+  $('#exDetail').textContent = eInMonth.length ? `${eInMonth.length} امتحان` : 'لا يوجد';
+  $('#exBar').style.width = exPct + '%';
+
+  $('#behMonthPct').textContent = behScore + '%';
+  $('#behMonthDetail').textContent = behCount ? `${behCount} سلوك (-${behPenalty}%)` : 'مفيش سلوكيات ✅';
+  $('#behBar').style.width = behScore + '%';
+
+  // الدائرة
+  $('#overallPct').textContent = overall + '%';
+  const r = 80;
+  const c = 2 * Math.PI * r;
+  const offset = c - (overall / 100) * c;
+  $('#ringProgress').style.strokeDashoffset = offset;
+
+  // التقييم
+  let rating = '', msg = '', color = '';
+  if (overall >= 90) { rating = '🌟 ممتاز'; msg = 'أداءك رائع يا بطل! كمل كده.'; color = 'text-ita-green'; }
+  else if (overall >= 75) { rating = '👏 جيد جدًا'; msg = 'شغل حلو — حاول توصل للأعلى.'; color = 'text-blue-600'; }
+  else if (overall >= 60) { rating = '👍 كويس'; msg = 'محتاج شوية تحسين في حاجة منهم.'; color = 'text-amber-600'; }
+  else if (overall >= 40) { rating = '⚠️ محتاج تحسين'; msg = 'خد بالك من الحضور والواجب.'; color = 'text-amber-700'; }
+  else { rating = '❗ ضعيف'; msg = 'لازم تتحسن — كلم المستر.'; color = 'text-ita-red'; }
+
+  $('#overallRating').textContent = rating;
+  $('#overallRating').className = `text-3xl font-black mt-2 ${color}`;
+  $('#overallMsg').textContent = msg;
+
+  // animation للدائرة
+  setTimeout(() => {
+    $('#ringProgress').style.strokeDashoffset = offset;
+  }, 100);
+}
+
+/* ==========================================================
+   12) خروج
+   ========================================================== */
+$('#logoutBtn').addEventListener('click', () => {
+  sessionStorage.removeItem(AUTH_KEY);
+  state.student = null;
+  state.sessions = [];
+  state.exams = [];
+  state.behavior = [];
+  location.reload();
+});
+
+/* ==========================================================
+   13) استرجاع الجلسة
+   ========================================================== */
+async function tryRestoreSession() {
+  const raw = sessionStorage.getItem(AUTH_KEY);
+  if (!raw || !db) return false;
+  try {
+    const { id } = JSON.parse(raw);
+    const snap = await getDocs(query(collection(db,'students'), where('__name__','==',id)));
+    if (snap.empty) return false;
+    const doc0 = snap.docs[0];
+    state.student = { id: doc0.id, ...doc0.data() };
+    await loadStudentData();
+    showApp();
+    return true;
+  } catch (err) {
+    console.warn('restore failed', err);
+    return false;
+  }
+}
+
+/* ==========================================================
+   14) PWA
+   ========================================================== */
+let deferredPrompt = null;
+window.addEventListener('beforeinstallprompt', e => { e.preventDefault(); deferredPrompt = e; });
+$('#installBtn').addEventListener('click', async () => {
+  if (deferredPrompt) {
+    deferredPrompt.prompt();
+    const { outcome } = await deferredPrompt.userChoice;
+    if (outcome === 'accepted') toast('تم تثبيت التطبيق 🎉');
+    deferredPrompt = null;
+    return;
+  }
+  if (window.matchMedia('(display-mode: standalone)').matches) return toast('التطبيق مثبّت بالفعل ✅','info');
+  toast('افتح قائمة المتصفح واختر "تثبيت التطبيق"','info');
+});
+window.addEventListener('appinstalled', () => toast('تم التثبيت بنجاح 🎉'));
+
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('./sw.js').catch(err => console.warn('SW failed:', err));
+  });
+}
+
+/* ==========================================================
+   15) التشغيل
+   ========================================================== */
+$('#year').textContent = new Date().getFullYear();
+$('#yearLogin').textContent = new Date().getFullYear();
+setConn(false);
+tryRestoreSession();
+</script>
+</body>
+</html>
